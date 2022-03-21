@@ -1,0 +1,13 @@
+//Colores
+$primary: #3957ed;
+$secundary: #7ec9f5;
+$grey: #545563;
+
+$degradado: linear-gradient($primary, $secundary);
+
+%boton-general{
+    border-radius: 10px;
+    background-color: $primary;
+}
+
+//@extend %boton-general;
