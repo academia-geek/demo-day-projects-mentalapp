@@ -1,3 +1,22 @@
+.prin-prof {
+  display: flex;
+}
+.prin-prof .main-prof {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.prin-prof .main-prof img {
+  width: 100px;
+  border-radius: 50%;
+}
+.prin-prof .main-prof h2 {
+  text-align: center;
+}
+.prin-prof .main-prof p {
+  text-align: center;
+}
+
 .prin-serv {
   display: flex;
   flex-direction: column;
@@ -8,6 +27,7 @@
   color: #3957ed;
   text-align: center;
   margin-bottom: 50px;
+  font-family: "Nunito", sans-serif;
 }
 .prin-serv .categ {
   display: flex;
@@ -25,11 +45,13 @@
 .prin-serv .categ .sec-pro h2 {
   color: #3957ed;
   text-align: center;
+  font-family: "Nunito", sans-serif;
 }
 .prin-serv .categ .sec-pro p {
   color: #545563;
   text-align: center;
   margin-bottom: 50px;
+  font-family: "Montserrat", sans-serif;
 }
 .prin-serv .categ .sec-pro > div {
   display: flex;

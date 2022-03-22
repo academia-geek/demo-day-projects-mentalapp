@@ -47,17 +47,8 @@ export const AppRouter = () => {
         <Route
           path="/*"
           element={
-            <PrivateRouter>
-              <DashboardRoutes />
-            </PrivateRouter>
-          }
-        />
-
-        <Route
-          path="/servicios"
-          element={
             <PublicRouter>
-              <Servicios />
+              <DashboardRoutes />
             </PublicRouter>
           }
         />

@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Chat from "./Chat/Chat";
 
 const Servicios = () => {
+  // Utilidades
+
+  let navigate = useNavigate();
+
+  // Estados
+
   const [modal, setModal] = useState(false);
+
+  // Abrir y cerrar el chat
 
   const openChat = () => {
     setModal(true);
@@ -10,6 +19,15 @@ const Servicios = () => {
 
   const closeChat = () => {
     setModal(false);
+  };
+
+  // Redireccionar
+
+  const redForo = () => {
+    navigate("/foro");
+  };
+  const redCitas = () => {
+    navigate("/citas");
   };
 
   return (
@@ -25,8 +43,12 @@ const Servicios = () => {
               de nuestro profesionales
             </p>
             <div>
-              <button>Quiero hablar con alguien ahora</button>
-              <button>Quiero que me contacten luego</button>
+              <button onClick={() => openChat()}>
+                Quiero hablar con alguien ahora
+              </button>
+              <button onClick={() => redCitas()}>
+                Quiero que me contacten luego
+              </button>
             </div>
           </div>
           <div className="sec-for">
@@ -37,7 +59,7 @@ const Servicios = () => {
               los demás.
             </p>
             <div>
-              <button>Visitar el foro</button>
+              <button onClick={() => redForo()}>Visitar el foro</button>
             </div>
           </div>
           <div className="sec-chat">
@@ -46,7 +68,9 @@ const Servicios = () => {
           {modal === true ? (
             <div>
               <Chat />
-              <button className="btn-close" onClick={() => closeChat()}>Cerrar</button>
+              <button className="btn-close" onClick={() => closeChat()}>
+                Cerrar
+              </button>
             </div>
           ) : (
             ""
