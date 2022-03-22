@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
 import "./style/css/index.css";
 
 ReactDOM.render(
    <React.StrictMode>
+      <Navbar />
       <Login />
    </React.StrictMode>,
    document.getElementById("root")
