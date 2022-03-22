@@ -2,8 +2,13 @@
 $primary: #3957ed;
 $secundary: #7ec9f5;
 $grey: #545563;
+$white: #FFFFFF;
 
 $degradado: linear-gradient($primary, $secundary);
+
+//Fuentes
+$montserrat: 'Montserrat', sans-serif;
+$nunito: 'Nunito', sans-serif;
 
 %boton-general{
     border-radius: 10px;
