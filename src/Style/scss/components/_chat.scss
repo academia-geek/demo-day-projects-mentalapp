@@ -1,0 +1,41 @@
+@import "../base/variables";
+
+.prin-chat {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  border: 2px solid $primary;
+  border-radius: 5px 5px 5px 0px;
+  padding: 30px;
+  margin-right: 20px;
+  h2 {
+    color: $primary;
+    text-align: center;
+  }
+  > div {
+    .text-ent {
+      color: $grey;
+      text-align: left;
+      font-size: 14px;
+    }
+    .text-sal {
+      color: $grey;
+      text-align: right;
+      font-size: 14px;
+    }
+  }
+  .ent-chat {
+    display: flex;
+    align-content: end;
+    margin-bottom: 10px;
+    input {
+      width: 100%;
+      border: 1px solid $primary;
+      border-radius: 5px;
+      height: 30px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: $grey;
+    }
+  }
+}
