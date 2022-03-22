@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import './style/css/index.css';
+import Login from "./components/Login/Login";
+import "./style/css/index.css";
 
 ReactDOM.render(
-   <React.StrictMode>{/* <App /> */}</React.StrictMode>,
+   <React.StrictMode>
+      <Login />
+   </React.StrictMode>,
    document.getElementById("root")
 );
 
