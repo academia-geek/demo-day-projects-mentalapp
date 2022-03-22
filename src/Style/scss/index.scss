@@ -1,4 +1,5 @@
 //Importaciones
+<<<<<<< HEAD
 @use './base/general';
 @use './components/foro';
 @use './components/inicio';
@@ -8,6 +9,15 @@
 @use './components/servicios';
 @use './components/chat';
 
+=======
+@use "./base/general";
+@use "./components/foro";
+@use "./components/inicio";
+@use "./components/login";
+@use "./components/navBar";
+@use "./components/perfil";
+@use "./components/servicios";
+>>>>>>> b39a9bc16424298186ebbd6ca2667f2e28cb2c19
 
 //Compilación
 // sass --watch src/style/scss/index.scss src/style/css/index.css
