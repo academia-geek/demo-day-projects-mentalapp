@@ -1,11 +1,11 @@
 //Importaciones
+@use "./base/general";
 @use "./components/foro";
 @use "./components/inicio";
-@use "./components/login";
+@use "./components/loginRegistro";
 @use "./components/navBar";
 @use "./components/perfil";
 @use "./components/servicios";
-@import "./base/general";
 
 //Compilación
 // sass --watch src/style/scss/index.scss src/style/css/index.css
