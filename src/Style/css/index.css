@@ -1,18 +1,395 @@
-/* Error: expected "{".
- *   ,
- * 2 | @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");
- *   |                                                                                                                                                    ^
- *   '
- *   src\style\scss\components\_login.scss 2:148  @use
- *   src\style\scss\index.scss 5:1                root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 2 \2502  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");\d\a   \2502                                                                                                                                                     ^\a   \2575 \a   src\\style\\scss\\components\\_login.scss 2:148  @use\a   src\\style\\scss\\index.scss 5:1                root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.login-container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: "Nunito", sans-serif;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  color: #3957ed;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.3rem;
+}
+.login form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.login form Button {
+  margin-top: 0.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.login-socialmedia {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 0.5em;
+}
+.login-socialmedia button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  gap: 0.5em;
+  cursor: pointer;
+}
+.login-socialmedia button img {
+  width: 1.2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 25px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #FFFFFF;
+}
+header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+header > div h1 {
+  margin: 0 10px;
+  font-size: 25px;
+  color: #3957ed;
+}
+header > nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header > nav > div {
+  margin-left: 40px;
+  padding: 10px 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+header > nav > div h4 {
+  font-weight: 600;
+  color: #545563;
+  cursor: pointer;
+}
+header > nav > div ul.desplegable {
+  position: absolute;
+  top: 100%;
+  padding-top: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: all 0.3s ease-in-out;
+  background-color: #FFFFFF;
+  border-radius: 0 0 5px 5px;
+}
+header > nav > div ul.desplegable.servicios {
+  left: 0;
+  width: 270px;
+}
+header > nav > div ul.desplegable.perfil {
+  right: 0;
+  width: 130px;
+  text-align: right;
+}
+header > nav > div ul.desplegable li {
+  text-decoration: none;
+  list-style: none;
+  color: #545563;
+  cursor: pointer;
+  padding: 0 10px 10px 10px;
+  width: 100%;
+}
+header > nav > div ul.desplegable li:hover {
+  font-weight: 600;
+}
+header > nav > div:hover {
+  border-top: solid 2px #7ec9f5;
+}
+header > nav > div:hover h4 {
+  color: #7ec9f5;
+}
+header > nav > div:hover .desplegable {
+  display: flex;
+}
+header > button {
+  display: none;
+}
+header > button img {
+  width: 30px;
+}
+@media screen and (max-width: 800px) {
+  header > div {
+    margin-right: 50px;
+  }
+  header > nav {
+    display: none;
+  }
+  header > button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  header.menu {
+    background-color: #3957ed;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  header.menu > div {
+    flex-grow: 0;
+  }
+  header.menu > div h1 {
+    color: #FFFFFF;
+  }
+  header.menu > nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 50px;
+  }
+  header.menu > nav > div {
+    margin: 10px 0;
+    padding: 5px 0;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  header.menu > nav > div h4 {
+    color: #FFFFFF;
+    padding-top: 5px;
+    border-top: solid 1px #FFFFFF;
+  }
+  header.menu > nav > div ul.desplegable, header.menu > nav > div ul.servicios, header.menu > nav > div ul.perfil {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+    width: auto;
+  }
+  header.menu > nav > div ul.desplegable li, header.menu > nav > div ul.servicios li, header.menu > nav > div ul.perfil li {
+    color: #FFFFFF;
+    text-align: right;
+    padding: 5px 0;
+  }
+  header.menu > nav > div:hover {
+    border: none;
+  }
+}
+
+.prin-prof {
+  display: flex;
+}
+.prin-prof .main-prof {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.prin-prof .main-prof img {
+  width: 100px;
+  border-radius: 50%;
+}
+.prin-prof .main-prof h2 {
+  text-align: center;
+}
+.prin-prof .main-prof p {
+  text-align: center;
+}
+
+.prin-serv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+}
+.prin-serv h1 {
+  color: #3957ed;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: "Nunito", sans-serif;
+}
+.prin-serv .categ {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.prin-serv .categ .sec-pro {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 2px solid #3957ed;
+  border-radius: 5px;
+  padding: 30px;
+  margin-right: 20px;
+}
+.prin-serv .categ .sec-pro h2 {
+  color: #3957ed;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+}
+.prin-serv .categ .sec-pro p {
+  color: #545563;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-serv .categ .sec-pro > div {
+  display: flex;
+  flex-direction: column;
+}
+.prin-serv .categ .sec-pro > div button {
+  cursor: pointer;
+  border: 1px solid #3957ed;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  background-color: transparent;
+  margin-bottom: 15px;
+  color: #3957ed;
+}
+.prin-serv .categ .sec-pro > div button:hover {
+  background-color: #3957ed;
+  color: white;
+  font-weight: bold;
+}
+.prin-serv .categ .sec-for {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 2px solid #3957ed;
+  border-radius: 5px;
+  padding: 30px;
+  margin-right: 20px;
+}
+.prin-serv .categ .sec-for h2 {
+  color: #3957ed;
+  text-align: center;
+}
+.prin-serv .categ .sec-for p {
+  color: #545563;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-serv .categ .sec-for > div {
+  display: flex;
+  flex-direction: column;
+}
+.prin-serv .categ .sec-for > div button {
+  cursor: pointer;
+  border: 1px solid #3957ed;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  color: #3957ed;
+  background-color: transparent;
+}
+.prin-serv .categ .sec-for > div button:hover {
+  background-color: #3957ed;
+  color: white;
+  font-weight: bold;
+}
+.prin-serv .categ .sec-chat {
+  position: absolute;
+  bottom: 0;
+  position: fixed;
+  right: 50px;
+}
+.prin-serv .categ .sec-chat button {
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  background-color: #3957ed;
+  border: 1px solid #3957ed;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+}
+.prin-serv .categ .sec-chat button:hover {
+  font-weight: bold;
+}
+.prin-serv .categ .btn-close {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background-color: #3957ed;
+  color: #fff;
+  border: 0;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.prin-chat {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  border: 2px solid #3957ed;
+  border-radius: 5px 5px 5px 0px;
+  padding: 30px;
+  margin-right: 20px;
+}
+.prin-chat h2 {
+  color: #3957ed;
+  text-align: center;
+}
+.prin-chat > div .text-ent {
+  color: #545563;
+  text-align: left;
+  font-size: 14px;
+}
+.prin-chat > div .text-sal {
+  color: #545563;
+  text-align: right;
+  font-size: 14px;
+}
+.prin-chat .ent-chat {
+  display: flex;
+  align-content: end;
+  margin-bottom: 10px;
+}
+.prin-chat .ent-chat input {
+  width: 100%;
+  border: 1px solid #3957ed;
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: #545563;
+}
+
+/*# sourceMappingURL=index.css.map */
