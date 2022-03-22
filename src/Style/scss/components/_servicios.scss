@@ -1,1 +1,125 @@
-@import '../base/variables'
+@import "../base/variables";
+
+.prin-serv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+  h1 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Nunito", sans-serif;
+  }
+  .categ {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .sec-pro {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      border: 2px solid $primary;
+      border-radius: 5px;
+      padding: 30px;
+      margin-right: 20px;
+      h2 {
+        color: $primary;
+        text-align: center;
+        font-family: "Nunito", sans-serif;
+      }
+      p {
+        color: $grey;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-family: "Montserrat", sans-serif;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        button {
+          cursor: pointer;
+          border: 1px solid $primary;
+          border-radius: 5px;
+          width: 300px;
+          height: 50px;
+          background-color: transparent;
+          margin-bottom: 15px;
+          color: $primary;
+          &:hover {
+            background-color: $primary;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .sec-for {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      border: 2px solid $primary;
+      border-radius: 5px;
+      padding: 30px;
+      margin-right: 20px;
+      h2 {
+        color: $primary;
+        text-align: center;
+      }
+      p {
+        color: $grey;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-family: "Montserrat", sans-serif;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        button {
+          cursor: pointer;
+          border: 1px solid $primary;
+          border-radius: 5px;
+          width: 300px;
+          height: 50px;
+          color: $primary;
+          background-color: transparent;
+          &:hover {
+            background-color: $primary;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .sec-chat {
+      position: absolute;
+      bottom: 0;
+      position: fixed;
+      right: 50px;
+      button {
+        cursor: pointer;
+        width: 250px;
+        height: 50px;
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-radius: 5px 5px 0px 0px;
+        color: white;
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+    .btn-close {
+      cursor: pointer;
+      width: 50px;
+      height: 25px;
+
+      background-color: $primary;
+      color: #fff;
+      border: 0;
+      border-radius: 0px 0px 3px 3px;
+    }
+  }
+}

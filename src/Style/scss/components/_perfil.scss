@@ -1,1 +1,20 @@
-@import '../base/variables'
+@import "../base/variables";
+
+.prin-prof {
+  display: flex;
+  .main-prof {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
