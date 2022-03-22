@@ -21,6 +21,9 @@ header{
             font-size: 25px;
             color: $primary;
         }
+        img{
+            width: 40px;
+        }
     }
     >nav{
         display: flex;
@@ -96,13 +99,17 @@ header{
             display: none;
         }
         >button{
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
             padding: 10px;
             position: absolute;
             top: 15px;
             right: 15px;
+            transition: all 0.3s linear;
         }
         &.menu{
             background-color: $primary;
@@ -153,6 +160,9 @@ header{
                         border: none;
                     }
                 }
+            }
+            >button{
+                transform: rotate(-180deg);
             }
         }
     }

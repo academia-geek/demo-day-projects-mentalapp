@@ -77,6 +77,9 @@ header > div h1 {
   font-size: 25px;
   color: #3957ed;
 }
+header > div img {
+  width: 40px;
+}
 header > nav {
   display: flex;
   flex-direction: row;
@@ -151,13 +154,17 @@ header > button img {
     display: none;
   }
   header > button {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     padding: 10px;
     position: absolute;
     top: 15px;
     right: 15px;
+    transition: all 0.3s linear;
   }
   header.menu {
     background-color: #3957ed;
@@ -209,6 +216,9 @@ header > button img {
   }
   header.menu > nav > div:hover {
     border: none;
+  }
+  header.menu > button {
+    transform: rotate(-180deg);
   }
 }
 
