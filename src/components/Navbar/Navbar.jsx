@@ -1,9 +1,14 @@
-import React from 'react'
-import { logo } from '../../media/imagenes'
+import React, { useState } from 'react'
+import { logo, menuIcon, menuIconLight } from '../../media/imagenes'
 
 const Navbar = () => {
+
+  const [showMenu, setShowMenu] = useState(false);
+  const clase = showMenu ? "menu" : "";
+  const icon = showMenu ? menuIconLight : menuIcon;
+
   return (
-    <header>
+    <header className={clase}>
         <div>
             <img src={logo} alt='logo MentalApp'/>
             <h1>MentalApp</h1>
@@ -28,6 +33,9 @@ const Navbar = () => {
             </ul>
           </div>
         </nav>
+        <button onClick={()=>setShowMenu(!showMenu)}>
+          <img src={icon} alt='menu icon'/>
+        </button>
     </header>
   )
 }
