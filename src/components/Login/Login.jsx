@@ -18,14 +18,10 @@ const Login = () => {
       initialValues: {
          email: "",
          pass: "",
-         pass2: "",
       },
       validationSchema: Yup.object({
          email: Yup.string().email().required(),
-         pass: Yup.string()
-            .required()
-            .oneOf([Yup.ref("pass2")]),
-         pass2: Yup.string().required(),
+         pass: Yup.string().required(),
       }),
       onSubmit: (data) => {
          console.log(data);
@@ -87,13 +83,6 @@ const Login = () => {
                   name="pass"
                   onChange={loginFormik.handleChange}
                />
-               <TextField
-                  type="password"
-                  label="Repite contraseña"
-                  variant="filled"
-                  name="pass2"
-                  onChange={loginFormik.handleChange}
-               />
                <Button type="submit" variant="contained">
                   Enviar
                </Button>
@@ -112,7 +101,7 @@ const Login = () => {
          </div>
 
          <div className="login" style={{ borderLeft: "1px solid lightgray" }}>
-            <h3 className="title">Aún no tienes cuenta? Registrate</h3>
+            <h3 className="title">¿Aún no tienes cuenta? Registrate</h3>
             <form onSubmit={signupFormik.handleSubmit}>
                <TextField
                   label="Nombre"
