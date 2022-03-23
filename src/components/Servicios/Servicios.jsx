@@ -13,6 +13,9 @@ const Servicios = () => {
   const redCitas = () => {
     navigate("/citas");
   };
+  const redChat = () => {
+    navigate("/chat");
+  };
 
   return (
     <>
@@ -27,7 +30,7 @@ const Servicios = () => {
               de nuestro profesionales
             </p>
             <div>
-              <button>Quiero hablar con alguien ahora</button>
+              <button  onClick={redChat}>Quiero hablar con alguien ahora</button>
               <button onClick={redCitas}>Quiero que me contacten luego</button>
             </div>
           </div>

@@ -5,6 +5,7 @@ import Foro from "../components/Foro/Foro";
 import Citas from "../components/Servicios/Citas/Citas";
 import Chat from "../components/Servicios/Chat/Chat";
 import Login from "../components/Login/Login";
+import Perfil from "../components/Perfil/Perfil";
 
 
 export const DashboardRoutes = () => {
