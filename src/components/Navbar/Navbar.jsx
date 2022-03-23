@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { logo, menuIcon, menuIconLight } from "../../media/imagenes";
+import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 
 const Navbar = () => {
-  let navigate = useNavigate();
-
+  
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
   const clase = showMenu ? "menu" : "";
-  const icon = showMenu ? menuIconLight : menuIcon;
+  const iconMenu = showMenu ? menuIconLight : menuIcon;
+  const iconLogo = showMenu ? logoLight : logo;
 
-  // Redireccionar
-
-  const redForo = () => {
-    navigate("/foro");
-  };
-  const redCitas = () => {
-    navigate("/citas");
-  };
+  const redirect = (ruta) =>{
+    navigate(ruta);
+    setShowMenu(false);
+  }
 
   return (
     <header className={clase}>
       <div>
-        <img src={logo} alt="logo MentalApp" />
+        <img src={iconLogo} alt="logo MentalApp" />
         <h1>MentalApp</h1>
       </div>
       <nav>
@@ -29,10 +26,10 @@ const Navbar = () => {
           <h4>Servicios</h4>
           <ul className="desplegable servicios">
             <li>Chat con un profesional</li>
-            <li onClick={() => redCitas()}>
+            <li onClick={() => redirect('/citas')}>
               Agendar una cita con un profesional
             </li>
-            <li onClick={() => redForo()}>Visitar foro</li>
+            <li onClick={() => redirect('/foro')}>Visitar foro</li>
           </ul>
         </div>
         <div>
@@ -47,7 +44,7 @@ const Navbar = () => {
         </div>
       </nav>
       <button onClick={() => setShowMenu(!showMenu)}>
-        <img src={icon} alt="menu icon" />
+        <img src={iconMenu} alt="menu icon" />
       </button>
     </header>
   );
