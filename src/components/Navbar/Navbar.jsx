@@ -1,56 +1,57 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logo, menuIcon, menuIconLight } from "../../media/imagenes";
+import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
+import { logoutAsync } from "../../redux/actions/actionLogin";
 
 const Navbar = () => {
-  let navigate = useNavigate();
+   const dispatch = useDispatch();
+   const [showMenu, setShowMenu] = useState(false);
+   const navigate = useNavigate();
+   const clase = showMenu ? "menu" : "";
+   const iconMenu = showMenu ? menuIconLight : menuIcon;
+   const iconLogo = showMenu ? logoLight : logo;
 
-  const [showMenu, setShowMenu] = useState(false);
-  const clase = showMenu ? "menu" : "";
-  const icon = showMenu ? menuIconLight : menuIcon;
+   const redirect = (ruta) => {
+      navigate(ruta);
+      setShowMenu(false);
+   };
 
-  // Redireccionar
+   const handleLogout = () => {
+      dispatch(logoutAsync());
+   };
 
-  const redForo = () => {
-    navigate("/foro");
-  };
-  const redCitas = () => {
-    navigate("/citas");
-  };
-
-  return (
-    <header className={clase}>
-      <div>
-        <img src={logo} alt="logo MentalApp" />
-        <h1>MentalApp</h1>
-      </div>
-      <nav>
-        <div>
-          <h4>Servicios</h4>
-          <ul className="desplegable servicios">
-            <li>Chat con un profesional</li>
-            <li onClick={() => redCitas()}>
-              Agendar una cita con un profesional
-            </li>
-            <li onClick={() => redForo()}>Visitar foro</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Sobre nosotros</h4>
-        </div>
-        <div>
-          <h4>Perfil</h4>
-          <ul className="desplegable perfil">
-            <li>Editar perfil</li>
-            <li>Cerrar sesión</li>
-          </ul>
-        </div>
-      </nav>
-      <button onClick={() => setShowMenu(!showMenu)}>
-        <img src={icon} alt="menu icon" />
-      </button>
-    </header>
-  );
+   return (
+      <header className={clase}>
+         <div onClick={() => redirect("/")}>
+            <img src={iconLogo} alt="logo MentalApp" />
+            <h1>MentalApp</h1>
+         </div>
+         <nav>
+            <div>
+               <h4 onClick={() => redirect()}>Servicios</h4>
+               <ul className="desplegable servicios">
+                  <li>Chat con un profesional</li>
+                  <li onClick={() => redirect("/citas")}>Agendar una cita con un profesional</li>
+                  <li onClick={() => redirect("/foro")}>Visitar foro</li>
+               </ul>
+            </div>
+            <div>
+               <h4>Sobre nosotros</h4>
+            </div>
+            <div>
+               <h4 onClick={() => redirect("/perfil")}>Perfil</h4>
+               <ul className="desplegable perfil">
+                  <li>Editar perfil</li>
+                  <li onClick={() => handleLogout()}>Cerrar sesión</li>
+               </ul>
+            </div>
+         </nav>
+         <button onClick={() => setShowMenu(!showMenu)}>
+            <img src={iconMenu} alt="menu icon" />
+         </button>
+      </header>
+   );
 };
 
 export default Navbar;

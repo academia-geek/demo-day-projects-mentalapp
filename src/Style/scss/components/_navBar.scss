@@ -16,10 +16,14 @@ header{
         justify-content: flex-start;
         flex-grow: 1;
         flex-wrap: wrap;
+        cursor: pointer;
         h1{
             margin: 0 10px;
             font-size: 25px;
             color: $primary;
+        }
+        img{
+            width: 30px;
         }
     }
     >nav{
@@ -84,9 +88,6 @@ header{
     }
     >button{
         display: none;
-        img{
-            width: 30px;
-        }
     }
     @media screen and (max-width:800px){
         >div{
@@ -96,13 +97,21 @@ header{
             display: none;
         }
         >button{
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
             padding: 10px;
             position: absolute;
             top: 15px;
             right: 15px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            img{
+                width: 30px;
+            }
         }
         &.menu{
             background-color: $primary;
@@ -153,6 +162,9 @@ header{
                         border: none;
                     }
                 }
+            }
+            >button{
+                transform: rotate(-180deg);
             }
         }
     }

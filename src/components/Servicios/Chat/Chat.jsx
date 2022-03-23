@@ -4,10 +4,16 @@ const Chat = () => {
   return (
     <>
       <div className="prin-chat">
-        <h2>Chat con un profesional</h2>
-        <div>
-          <p className="text-ent">Hola, ¿cómo te encuentras hoy?</p>
-          <p className="text-sal">Hola, buenos días</p>
+        <h1>Chat con un profesional</h1>
+        <div className="inter-chat">
+          <div className="text-ent">
+            <p>Hola, ¿cómo te encuentras hoy?</p>
+            <h5>Profesional</h5>
+          </div>
+          <div className="text-sal">
+            <p>Hola, buenos días</p>
+            <h5>Usuario</h5>
+          </div>
         </div>
         <div className="ent-chat">
           <input type="text" />
