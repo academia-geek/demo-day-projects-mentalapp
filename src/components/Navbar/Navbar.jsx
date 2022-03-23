@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logo, menuIcon, menuIconLight } from "../../media/imagenes";
+import { logoutAsync } from "../../redux/actions/actionLogin";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   let navigate = useNavigate();
 
   const [showMenu, setShowMenu] = useState(false);
   const clase = showMenu ? "menu" : "";
   const icon = showMenu ? menuIconLight : menuIcon;
+
+  // Cerrar sesión
+
+  const handleLogout = () => {
+    dispatch(logoutAsync());
+  };
 
   // Redireccionar
 
@@ -51,7 +60,7 @@ const Navbar = () => {
           <h4 onClick={() => redPerfil()}>Perfil</h4>
           <ul className="desplegable perfil">
             <li>Editar perfil</li>
-            <li>Cerrar sesión</li>
+            <li onClick={() => handleLogout()}>Cerrar sesión</li>
           </ul>
         </div>
       </nav>
