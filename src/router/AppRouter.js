@@ -1,16 +1,15 @@
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Login from "../components/Login";
-import Servicios from "../components/Servicios/Servicios";
+import Login from "../components/Login/Login";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRouter } from "./PrivateRouter";
 import { PublicRouter } from "./PublicRouter";
 
 export const AppRouter = () => {
-  // const [checking, setChecking] = useState(true);
+  const [checking, setChecking] = useState(true);
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // useEffect(() => {
   //   const auth = getAuth();
@@ -35,19 +34,19 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route
+        <Route
           path="/login"
           element={
             <PublicRouter isAuth={isLoggedIn}>
               <Login />
             </PublicRouter>
           }
-        /> */}
+        />
 
         <Route
           path="/*"
           element={
-            <PublicRouter>
+            <PublicRouter isAuth={isLoggedIn}>
               <DashboardRoutes />
             </PublicRouter>
           }

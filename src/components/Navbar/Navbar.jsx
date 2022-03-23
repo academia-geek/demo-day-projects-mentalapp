@@ -17,16 +17,25 @@ const Navbar = () => {
   const redCitas = () => {
     navigate("/citas");
   };
+  const redInicio = () => {
+    navigate("/inicio");
+  };
+  const redPerfil = () => {
+    navigate("/perfil");
+  };
+  const redServicios = () => {
+    navigate("/servicios");
+  };
 
   return (
     <header className={clase}>
       <div>
         <img src={logo} alt="logo MentalApp" />
-        <h1>MentalApp</h1>
+        <h1 onClick={() => redInicio()}>MentalApp</h1>
       </div>
       <nav>
         <div>
-          <h4>Servicios</h4>
+          <h4 onClick={() => redServicios()}>Servicios</h4>
           <ul className="desplegable servicios">
             <li>Chat con un profesional</li>
             <li onClick={() => redCitas()}>
@@ -39,7 +48,7 @@ const Navbar = () => {
           <h4>Sobre nosotros</h4>
         </div>
         <div>
-          <h4>Perfil</h4>
+          <h4 onClick={() => redPerfil()}>Perfil</h4>
           <ul className="desplegable perfil">
             <li>Editar perfil</li>
             <li>Cerrar sesión</li>

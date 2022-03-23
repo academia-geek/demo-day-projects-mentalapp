@@ -1,1 +1,55 @@
-@import '../base/variables'
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");
+@import "../base/variables";
+
+.login-container {
+   width: 90%;
+   margin: 2rem auto;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+
+   font-family: "Nunito", sans-serif;
+}
+
+.title {
+   font-family: "Montserrat", sans-serif;
+   color: $primary;
+}
+
+.login {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2.3rem;
+
+   form {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      Button {
+         margin-top: 0.5rem;
+         font-family: "Nunito", sans-serif;
+      }
+   }
+}
+
+.login-socialmedia {
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+   gap: 0.5em;
+
+   button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem;
+      gap: 0.5em;
+      cursor: pointer;
+
+      img {
+         width: 1.2rem;
+      }
+   }
+}

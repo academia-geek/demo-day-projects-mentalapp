@@ -1,8 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.login-container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: "Nunito", sans-serif;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  color: #3957ed;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.3rem;
+}
+.login form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.login form Button {
+  margin-top: 0.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.login-socialmedia {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 0.5em;
+}
+.login-socialmedia button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  gap: 0.5em;
+  cursor: pointer;
+}
+.login-socialmedia button img {
+  width: 1.2rem;
 }
 
 header {
@@ -165,21 +214,86 @@ header > button img {
 
 .prin-prof {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+}
+.prin-prof h1 {
+  color: #3957ed;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: "Nunito", sans-serif;
 }
 .prin-prof .main-prof {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
 }
-.prin-prof .main-prof img {
+.prin-prof .main-prof .main-per {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  border-radius: 5px;
+  padding: 30px;
+  margin-right: 20px;
+}
+.prin-prof .main-prof .main-per img {
   width: 100px;
   border-radius: 50%;
+  margin-bottom: 20px;
 }
-.prin-prof .main-prof h2 {
+.prin-prof .main-prof .main-per h2 {
   text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
 }
-.prin-prof .main-prof p {
+.prin-prof .main-prof .main-per p {
+  font-size: 14px;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-prof .main-data {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 5px;
+  padding: 30px;
+  margin-right: 20px;
+}
+.prin-prof .main-data hr {
+  width: 100%;
+  border: 1px solid #7ec9f5;
+}
+.prin-prof .main-data h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  color: #3957ed;
+  font-size: 18px;
+}
+.prin-prof .main-data p {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-prof .main-data img {
+  margin-top: 15px;
+  border-radius: 5px;
+}
+.prin-prof .main-data .sec-act {
+  display: flex;
+  align-items: center;
+}
+.prin-prof .main-data .sec-act img {
+  width: 40px;
+  border-radius: 50%;
+}
+.prin-prof .main-data .sec-act h6 {
+  margin-left: 10px;
+  font-family: "Nunito", sans-serif;
 }
 
 .prin-serv {
@@ -308,25 +422,46 @@ header > button img {
 .prin-chat {
   display: flex;
   flex-direction: column;
-  width: 600px;
-  border: 2px solid #3957ed;
+  width: 100%;
+  height: 100vh;
   border-radius: 5px 5px 5px 0px;
   padding: 30px;
   margin-right: 20px;
 }
-.prin-chat h2 {
+.prin-chat h1 {
   color: #3957ed;
   text-align: center;
+  font-family: "Nunito", sans-serif;
 }
-.prin-chat > div .text-ent {
+.prin-chat .inter-chat {
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: end;
+}
+.prin-chat .inter-chat .text-ent p {
   color: #545563;
   text-align: left;
   font-size: 14px;
+  font-family: "Montserrat", sans-serif;
 }
-.prin-chat > div .text-sal {
+.prin-chat .inter-chat .text-ent h5 {
+  color: #7ec9f5;
+  text-align: left;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-chat .inter-chat .text-sal p {
   color: #545563;
   text-align: right;
   font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-chat .inter-chat .text-sal h5 {
+  color: #7ec9f5;
+  text-align: right;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
 }
 .prin-chat .ent-chat {
   display: flex;
@@ -335,12 +470,31 @@ header > button img {
 }
 .prin-chat .ent-chat input {
   width: 100%;
-  border: 1px solid #3957ed;
+  border: 2px solid #3957ed;
   border-radius: 5px;
   height: 30px;
+  margin-top: 15px;
   margin-bottom: 5px;
   padding-left: 10px;
   color: #545563;
+}
+
+.btn-chat {
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+}
+.btn-chat button {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #c42626;
+  color: white;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
 }
 
 /*# sourceMappingURL=index.css.map */
