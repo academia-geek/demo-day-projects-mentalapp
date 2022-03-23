@@ -144,9 +144,6 @@ header > nav > div:hover .desplegable {
 header > button {
   display: none;
 }
-header > button img {
-  width: 30px;
-}
 @media screen and (max-width: 800px) {
   header > div {
     margin-right: 50px;
@@ -166,6 +163,10 @@ header > button img {
     top: 15px;
     right: 15px;
     transition: all 0.3s linear;
+    cursor: pointer;
+  }
+  header > button img {
+    width: 30px;
   }
   header.menu {
     background-color: #3957ed;

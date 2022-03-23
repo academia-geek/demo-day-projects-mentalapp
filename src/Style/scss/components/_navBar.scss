@@ -88,9 +88,6 @@ header{
     }
     >button{
         display: none;
-        img{
-            width: 30px;
-        }
     }
     @media screen and (max-width:800px){
         >div{
@@ -111,6 +108,10 @@ header{
             top: 15px;
             right: 15px;
             transition: all 0.3s linear;
+            cursor: pointer;
+            img{
+                width: 30px;
+            }
         }
         &.menu{
             background-color: $primary;
