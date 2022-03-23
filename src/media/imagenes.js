@@ -7,6 +7,6 @@ export const logoFacebook =
 export const menuIcon =
    "https://res.cloudinary.com/dbzo53yx4/image/upload/v1647965159/MentalApp/menu-icon_p97rqf.svg";
 export const menuIconLight =
-   "https://res.cloudinary.com/dbzo53yx4/image/upload/v1647965579/MentalApp/menu-icon_govxqv.svg";
+   "https://res.cloudinary.com/dbzo53yx4/image/upload/v1648047795/MentalApp/close-outline_cw6iqv.svg";
    
 export const logoLight = "https://res.cloudinary.com/dbzo53yx4/image/upload/v1648045526/MentalApp/fire_acepvy.svg";
