@@ -3,12 +3,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import React from "react";
 import { logoFacebook, logoGoogle } from "../../media/imagenes";
-import { loginEmailPassword, loginFacebook, loginGoogle } from "../../redux/actions/actionLogin";
+import {
+   loginEmailPassword,
+   loginFacebook,
+   loginGoogle,
+   registroEmailPasswordNombre,
+} from "../../redux/actions/actionLogin";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
-
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
 
    const loginFormik = useFormik({
       initialValues: {
@@ -25,6 +29,9 @@ const Login = () => {
       }),
       onSubmit: (data) => {
          console.log(data);
+
+         const { email, pass } = data;
+         dispatch(loginEmailPassword(email, pass));
       },
    });
 
@@ -45,6 +52,10 @@ const Login = () => {
       }),
       onSubmit: (data) => {
          console.log(data);
+
+         const { name, email, pass } = data;
+
+         dispatch(registroEmailPasswordNombre(email, pass, name));
       },
    });
 
@@ -52,7 +63,11 @@ const Login = () => {
 
    const handleGoogle = () => {
       dispatch(loginGoogle());
-    };
+   };
+
+   const handleFacebook = () => {
+      dispatch(loginFacebook());
+   };
 
    return (
       <div className="login-container">
@@ -89,7 +104,7 @@ const Login = () => {
                   <img src={logoGoogle} alt="" />
                   <span>Ingresa con Google</span>
                </button>
-               <button>
+               <button onClick={handleFacebook}>
                   <img src={logoFacebook} alt="" />
                   <span>Ingresa con Facebook</span>
                </button>
