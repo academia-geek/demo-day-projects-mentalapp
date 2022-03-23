@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header className={clase}>
-      <div>
+      <div onClick={() => redirect('/')}>
         <img src={iconLogo} alt="logo MentalApp" />
         <h1>MentalApp</h1>
       </div>
