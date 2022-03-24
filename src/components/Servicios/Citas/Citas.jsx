@@ -70,22 +70,24 @@ const Citas = () => {
           <div>
             <div className='cntr-profesionales'>
                 <h4>Escoge un profesional</h4>
-                {
-                  profesionales.map((pro)=>(
-                    <div key={pro.id} >
-                        <input
-                            type='radio'
-                            name='profesional'
-                            id={pro.id}
-                        />
-                        <label 
-                          htmlFor={pro.id} 
-                          onClick={()=>setProfesional(pro.id)}>
-                          {pro.nombre}
-                        </label>
-                    </div>
-                  ))
-                }
+                <div>
+                  {
+                    profesionales.map((pro)=>(
+                      <div key={pro.id} >
+                          <input
+                              type='radio'
+                              name='profesional'
+                              id={pro.id}
+                          />
+                          <label 
+                            htmlFor={pro.id} 
+                            onClick={()=>setProfesional(pro.id)}>
+                            {pro.nombre}
+                          </label>
+                      </div>
+                    ))
+                  }
+                </div>
             </div>
             <div>
                 <h4>Agenda tu cita</h4>

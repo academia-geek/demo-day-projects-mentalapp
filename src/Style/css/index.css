@@ -149,6 +149,9 @@ header > button {
   header > div {
     margin-right: 50px;
   }
+  header > div h1 {
+    font-size: 20px;
+  }
   header > nav {
     display: none;
   }
@@ -159,20 +162,20 @@ header > button {
     justify-content: center;
     background: none;
     border: none;
-    padding: 10px;
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 25px;
     transition: all 0.3s linear;
     cursor: pointer;
   }
   header > button img {
-    width: 30px;
+    width: 35px;
   }
   header.menu {
     background-color: #3957ed;
     position: absolute;
     top: 0;
+    z-index: 100;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -519,7 +522,7 @@ header > button {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   width: 100%;
-  text-align: left;
+  text-align: center;
   padding: 10px 20px;
   color: #3957ed;
 }
@@ -572,23 +575,48 @@ header > button {
   border: solid 1px #545563;
   border-radius: 8px;
 }
-.cntr-citas form > div > div.cntr-profesionales input {
+.cntr-citas form > div > div.cntr-profesionales > div {
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #3957ed #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div input {
   display: none;
 }
-.cntr-citas form > div > div.cntr-profesionales input:checked ~ label {
+.cntr-citas form > div > div.cntr-profesionales > div > div input:checked ~ label {
   color: white;
   background-color: #3957ed;
   border-color: #3957ed;
 }
-.cntr-citas form > div > div.cntr-profesionales label {
+.cntr-citas form > div > div.cntr-profesionales > div > div label {
   height: 100%;
   padding: 8px;
   text-align: center;
   border: solid #7ec9f5 1px;
   border-radius: 8px;
 }
-.cntr-citas form > div > div.cntr-profesionales label:hover {
+.cntr-citas form > div > div.cntr-profesionales > div > div label:hover {
   border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar {
+  width: 10px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-thumb {
+  background-color: #3957ed;
+  border-radius: 8px;
+  border: 3px solid #FFFFFF;
 }
 @media screen and (max-width: 400px) {
   .cntr-citas form > div > div {
