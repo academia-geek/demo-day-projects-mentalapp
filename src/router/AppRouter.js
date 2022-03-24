@@ -40,7 +40,7 @@ export const AppRouter = () => {
 
    return (
       <BrowserRouter>
-         <Navbar />
+         <Navbar isLoggedIn={isLoggedIn}/>
          <Routes>
             <Route
                path="/perfil"

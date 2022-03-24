@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 import { logoutAsync } from "../../redux/actions/actionLogin";
 
-const Navbar = () => {
+const Navbar = ({isLoggedIn}) => {
 
    const dispatch = useDispatch();
    const [showMenu, setShowMenu] = useState(false);
@@ -40,13 +40,20 @@ const Navbar = () => {
             <div>
                <h4>Sobre nosotros</h4>
             </div>
-            <div>
-               <h4 onClick={() => redirect("/perfil")}>Perfil</h4>
-               <ul className="desplegable perfil">
-                  <li>Editar perfil</li>
-                  <li onClick={() => handleLogout()}>Cerrar sesión</li>
-               </ul>
-            </div>
+            { isLoggedIn &&
+               <div>
+                  <h4 onClick={() => redirect("/perfil")}>Perfil</h4>
+                  <ul className="desplegable perfil">
+                     <li>Editar perfil</li>
+                     <li onClick={() => handleLogout()}>Cerrar sesión</li>
+                  </ul>
+               </div>
+            }
+            { !isLoggedIn &&
+               <div>
+                  <h4 onClick={() => redirect("/login")}>Iniciar sesión</h4>
+               </div>
+            }
          </nav>
          <button onClick={() => setShowMenu(!showMenu)}>
             <img src={iconMenu} alt="menu icon" />
