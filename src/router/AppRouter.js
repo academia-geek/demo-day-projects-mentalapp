@@ -1,9 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inicio from "../components/Inicio/Inicio"
 import Login from "../components/Login/Login"
-import Servicios from "../components/Servicios/Servicios"
 import Navbar from "../components/Navbar/Navbar";
 import FooterChat from "../components/Servicios/Chat/FooterChat";
 import { PrivateRouter } from "./PrivateRouter";
@@ -13,7 +11,6 @@ import Servicios from "../components/Servicios/Servicios";
 import Foro from "../components/Foro/Foro";
 import Citas from "../components/Servicios/Citas/Citas";
 import Chat from "../components/Servicios/Chat/Chat";
-import Login from "../components/Login/Login";
 import Perfil from "../components/Perfil/Perfil";
 
 export const AppRouter = () => {
@@ -35,8 +32,8 @@ export const AppRouter = () => {
 
    if (checking) {
       return (
-         <div>
-            <h1> Conectando con el servidor... </h1>;
+         <div className="checking">
+            <h1> Conectando con el servidor... </h1>
          </div>
       );
    }

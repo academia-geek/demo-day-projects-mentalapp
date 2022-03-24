@@ -458,6 +458,7 @@ header > button {
 .prin-chat .inter-chat {
   display: flex;
   height: 60%;
+  width: 100%;
   flex-direction: column;
   justify-content: end;
 }
@@ -487,8 +488,12 @@ header > button {
 }
 .prin-chat .ent-chat {
   display: flex;
+  justify-content: center;
   align-content: end;
   margin-bottom: 10px;
+}
+.prin-chat .ent-chat form {
+  width: 80%;
 }
 .prin-chat .ent-chat input {
   width: 100%;

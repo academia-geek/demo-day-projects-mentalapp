@@ -23,13 +23,13 @@ const Navbar = () => {
 
    return (
       <header className={clase}>
-         <div onClick={() => redirect("/")}>
+         <div onClick={() => redirect("/inicio")}>
             <img src={iconLogo} alt="logo MentalApp" />
             <h1>MentalApp</h1>
          </div>
          <nav>
             <div>
-               <h4 onClick={() => redirect()}>Servicios</h4>
+               <h4 onClick={() => redirect("/servicios")}>Servicios</h4>
                <ul className="desplegable servicios">
                   <li>Chat con un profesional</li>
                   <li onClick={() => redirect("/citas")}>Agendar una cita con un profesional</li>
