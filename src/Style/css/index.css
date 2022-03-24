@@ -63,6 +63,7 @@ header {
   padding: 15px 25px;
   font-family: "Montserrat", sans-serif;
   background-color: #FFFFFF;
+  margin-bottom: 30px;
 }
 header > div {
   display: flex;
@@ -506,6 +507,108 @@ header > button {
   color: white;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
+}
+
+.cntr-citas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cntr-citas h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
+  color: #3957ed;
+}
+.cntr-citas form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-family: "Nunito", sans-serif;
+}
+.cntr-citas form > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cntr-citas form > div > div {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cntr-citas form > div > div h4 {
+  color: #7ec9f5;
+  margin: 15px 0;
+  padding: 5px;
+  border-bottom: 1px solid #7ec9f5;
+}
+.cntr-citas form > div > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div > div label, .cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  color: #545563;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+.cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  margin: 5px 0;
+  padding: 5px;
+  border: solid 1px #545563;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales input {
+  display: none;
+}
+.cntr-citas form > div > div.cntr-profesionales input:checked ~ label {
+  color: white;
+  background-color: #3957ed;
+  border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales label {
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+  border: solid #7ec9f5 1px;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales label:hover {
+  border-color: #3957ed;
+}
+@media screen and (max-width: 400px) {
+  .cntr-citas form > div > div {
+    width: 100%;
+  }
+}
+.cntr-citas form > button {
+  width: 90%;
+  max-width: 300px;
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #3957ed;
+  border: none;
+  border-radius: 10px;
+}
+.cntr-citas form > button:hover {
+  background-color: #7ec9f5;
 }
 
 /*# sourceMappingURL=index.css.map */

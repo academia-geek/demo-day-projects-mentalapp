@@ -5,6 +5,7 @@ import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 import { logoutAsync } from "../../redux/actions/actionLogin";
 
 const Navbar = () => {
+
    const dispatch = useDispatch();
    const [showMenu, setShowMenu] = useState(false);
    const navigate = useNavigate();
