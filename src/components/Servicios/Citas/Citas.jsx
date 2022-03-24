@@ -1,28 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import {db} from '../../../firebase/firebaseConfig';
 
 const Citas = () => {
 
-  const profesionales = [
-    {
-      nombre:"Alfredo Ardila",
-      dias: [1,2,4,5],
-      horaInicio: 8,
-      horafinal: 12,
-      agenda: [],
-      id: "1"
-    },
-    {
-      nombre:"Jorge González",
-      dias: [2,3,4,5],
-      horaInicio: 13,
-      horafinal: 18,
-      agenda: [],
-      id: "2"
-    }
-  ]
-
+  const [profesionales, setProfesionales] = useState([]);
   const [profesional, setProfesional] = useState("");
   const seleccion = profesionales.find((pro)=>(pro.id===profesional));
+  const [cargando, setCargando] = useState(true);
+
+  useEffect(()=>{
+
+      getDocs(collection(db, "profesionales"))
+        .then((response)=>{
+            let data = [];
+            response.forEach(doc=>{
+               const prof = {...doc.data(), id:doc.id};
+               data = [...data, prof]
+            })
+            setProfesionales(data);
+            setCargando(false);
+        })
+        .catch(error=>{
+          console.log(error);
+        })
+
+  }, []);
 
   const getFechas = () =>{
 
@@ -42,8 +45,10 @@ const Citas = () => {
           const day = String(fecha.getDate());
           const month = String(fecha.getMonth() + 1);
           const year = String(fecha.getFullYear());
+          const inicio = String(seleccion.horaInicio);
+          const final = String(seleccion.horafinal);
 
-          for(let j=seleccion.horaInicio; j<seleccion.horafinal; j++){
+          for(let j=inicio; j<final; j++){
 
             const hora = String(j) + ':00 - ' + String(j+1) + ':00';
             const nuevaFecha = day + '/' + month + '/' + year + " " + hora;
@@ -53,7 +58,6 @@ const Citas = () => {
               resultado = [...resultado, nuevaFecha];
 
             }
-
           }
         }
       }
@@ -61,6 +65,14 @@ const Citas = () => {
 
     return resultado;
 
+  }
+
+  if(cargando){
+    return(
+      <div className='loader'>
+        <h3>Cargando citas...</h3>
+      </div>
+    )
   }
 
   return (

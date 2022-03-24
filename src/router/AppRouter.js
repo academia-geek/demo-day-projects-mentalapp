@@ -32,8 +32,8 @@ export const AppRouter = () => {
 
    if (checking) {
       return (
-         <div>
-            <h1> Conectando con el servidor... </h1>;
+         <div className='loader'>
+            <h3>Conectando con el servidor...</h3>
          </div>
       );
    }
