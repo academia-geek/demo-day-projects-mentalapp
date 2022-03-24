@@ -42,7 +42,8 @@
           cursor: pointer;
           border: 1px solid $primary;
           border-radius: 5px;
-
+          font-family: "Nunito", sans-serif;
+          font-size: 14px;
           height: 50px;
           background-color: transparent;
           margin-bottom: 15px;
@@ -81,9 +82,11 @@
         button {
           cursor: pointer;
           border: 1px solid $primary;
+          font-family: "Nunito", sans-serif;
           border-radius: 5px;
           height: 50px;
           color: $primary;
+          font-size: 14px;
           background-color: transparent;
           &:hover {
             background-color: $primary;

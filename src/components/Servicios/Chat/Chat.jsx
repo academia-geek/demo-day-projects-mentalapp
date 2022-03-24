@@ -11,11 +11,7 @@ import {
 const Chat = () => {
   const dispatch = useDispatch();
 
-  const [mensajes, setMensajes] = useState([{texto: "Cargando chat..."}]);
-
-  // useEffect(() => {
-  //   dispatch(listChatAsync());
-  // }, [dispatch]);
+  const [mensajes, setMensajes] = useState([{ texto: "Cargando chat..." }]);
 
   useEffect(
     () =>
@@ -29,7 +25,7 @@ const Chat = () => {
   const usuario = useSelector((store) => store.user);
 
   // Agregar mensaje al chat
-  const [formValues, handleInputChange] = useForm({
+  const [formValues, handleInputChange, reset] = useForm({
     text: "text",
     uid: usuario.id,
   });
@@ -39,6 +35,7 @@ const Chat = () => {
   const handleMessage = (e) => {
     e.preventDefault();
     dispatch(addNewMessage({ texto, uid, fecha }));
+    reset()
   };
 
   let uid = usuario.id;
@@ -73,6 +70,7 @@ const Chat = () => {
               value={texto}
               placeholder="Ingresa tu mensaje"
               onChange={handleInputChange}
+              autoComplete="off"
             />
           </form>
         </div>
