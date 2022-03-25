@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 .cont--foro {
   width: 85%;
   margin: 2rem auto;
@@ -20,9 +24,55 @@
 }
 
 .foro {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 2rem;
+}
+
+.foro--agregar {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
+}
+.foro--agregar .agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  height: 3em;
+  background-color: #3957ed;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.foro--agregar .regresar {
+  width: 50%;
+  height: 3em;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.foro--agregar form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.ocultar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
 }
 
 .foro--cards {
@@ -35,7 +85,7 @@
   font-size: 0.9rem;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 80%;
+  width: 90%;
   padding: 1.2rem;
   display: grid;
   grid-template-columns: 80% 20%;
@@ -78,11 +128,32 @@
 }
 .cont--tema .tema--respuestas {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .respuestas--anadir {
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
+}
+
+.respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.respuesta--card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1em;
+  border-bottom: 1px solid #444444;
+}
+.respuesta--card span {
+  color: #545563;
 }
 
 .login-container {
