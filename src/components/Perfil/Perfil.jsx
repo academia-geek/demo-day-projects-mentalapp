@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fileUpload } from "../../helpers/fileUpload";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { addPostAsync, listPostAsync } from "../../redux/actions/actionPerfil";
+import {
+  addPostAsync,
+  deletePostAsync,
+  listPostAsync,
+} from "../../redux/actions/actionPerfil";
 
 const Perfil = () => {
   const usuario = useSelector((store) => store.user);
@@ -74,14 +78,14 @@ const Perfil = () => {
                     alt="profile-image"
                   />
                   <h6>{usuario.name}</h6>
+                  <button
+                    onClick={() => dispatch(deletePostAsync(p.descripcion))}
+                  >
+                    Borrar
+                  </button>
                 </div>
-                <img
-                  src={p.url}
-                  alt="post"
-                />
-                <p>
-                 {p.descripcion}
-                </p>
+                <img src={p.url} alt="post" />
+                <p>{p.descripcion}</p>
               </>
             ))}
           </div>
