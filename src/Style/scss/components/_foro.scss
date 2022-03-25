@@ -1,1 +1,88 @@
-@import '../base/variables';
+@import "../base/variables";
+
+.cont--foro {
+   width: 85%;
+   margin: 2rem auto;
+   display: flex;
+   flex-direction: column;
+   gap: 3rem;
+   font-family: "Nunito", sans-serif;
+}
+
+.foro--titulo {
+   h1 {
+      color: $primary;
+   }
+}
+
+.foro {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.foro--cards {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.card {
+   font-size: 0.9rem;
+   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+   border-radius: 5px;
+   width: 80%;
+   padding: 1.2rem;
+   display: grid;
+   grid-template-columns: 80% 20%;
+   overflow: hidden;
+   cursor: pointer;
+
+   &:hover {
+      transform: scale(1.03);
+      animation-duration: 1s;
+   }
+
+   .card--info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      span,
+      p {
+         color: $grey;
+      }
+   }
+
+   .card--comment {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+   }
+}
+
+.cont--tema {
+   width: 55%;
+   margin: 2rem auto;
+   display: flex;
+   flex-direction: column;
+   gap: 3rem;
+   align-items: flex-end;
+   font-family: "Nunito", sans-serif;
+
+   .tema {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+
+   .tema--respuestas {
+      width: 90%;
+   }
+}
+
+.respuestas--anadir {
+   display: flex;
+   flex-direction: column;
+}

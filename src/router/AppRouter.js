@@ -12,6 +12,7 @@ import Citas from "../components/Servicios/Citas/Citas";
 import Chat from "../components/Servicios/Chat/Chat";
 import Login from "../components/Login/Login";
 import Perfil from "../components/Perfil/Perfil";
+import Tema from "../components/Foro/Tema";
 
 export const AppRouter = () => {
    const [checking, setChecking] = useState(true);
@@ -63,6 +64,7 @@ export const AppRouter = () => {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<Foro />} />
+            <Route path="/tema" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
          </Routes>
          <FooterChat />
