@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { loginReducer } from "../reducers/loginRedcuer";
 import { chatReducer } from "../reducers/chatReducer";
+import { perfilReducer } from "../reducers/perfilReducer";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -11,6 +12,7 @@ const composeEnhancers =
 const reducers = combineReducers({
   user: loginReducer,
   mensajes: chatReducer,
+  publicaciones: perfilReducer,
 });
 
 export const store = createStore(

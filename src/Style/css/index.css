@@ -241,18 +241,6 @@ header > button {
   justify-content: center;
   flex-wrap: wrap;
 }
-.prin-prof .main-prof button {
-  cursor: pointer;
-  background: linear-gradient(180deg, #7ec9f5 0%, #3957ed 100%);
-  border: 0;
-  color: white;
-  height: 40px;
-  width: 40px;
-  margin-top: 20px;
-  border-radius: 50%;
-  font-size: 25px;
-  font-family: "Nunito", sans-serif;
-}
 .prin-prof .main-prof .main-per {
   display: flex;
   flex-direction: column;
@@ -279,7 +267,7 @@ header > button {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-.prin-prof .main-data {
+.prin-prof .main-prof .main-data {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -289,7 +277,7 @@ header > button {
   margin-right: 20px;
   overflow-y: scroll;
 }
-.prin-prof .main-data h2 {
+.prin-prof .main-prof .main-data h2 {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Nunito", sans-serif;
@@ -297,7 +285,7 @@ header > button {
   border-bottom: 2px solid #7ec9f5;
   font-size: 18px;
 }
-.prin-prof .main-data p {
+.prin-prof .main-prof .main-data p {
   margin-top: 15px;
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -306,25 +294,75 @@ header > button {
   border-bottom: 2px solid #7ec9f5;
   font-family: "Montserrat", sans-serif;
 }
-.prin-prof .main-data img {
+.prin-prof .main-prof .main-data img {
   margin-top: 15px;
   border-radius: 5px;
 }
-.prin-prof .main-data .sec-act {
+.prin-prof .main-prof .main-data .sec-act {
   display: flex;
   align-items: center;
 }
-.prin-prof .main-data .sec-act img {
+.prin-prof .main-prof .main-data .sec-act img {
   width: 40px;
   border-radius: 50%;
 }
-.prin-prof .main-data .sec-act h6 {
+.prin-prof .main-prof .main-data .sec-act h6 {
   margin-left: 10px;
   font-family: "Nunito", sans-serif;
 }
-
-::-webkit-scrollbar {
-  display: none;
+.prin-prof .main-prof .new-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 30px;
+  margin-right: 20px;
+  border-left: 2px solid #3957ed;
+}
+.prin-prof .main-prof .new-post p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-prof .main-prof .new-post h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
+  color: #3957ed;
+  border-bottom: 2px solid #7ec9f5;
+  font-size: 18px;
+}
+.prin-prof .main-prof .new-post button {
+  cursor: pointer;
+  background: linear-gradient(180deg, #7ec9f5 0%, #3957ed 100%);
+  border: 0;
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+}
+.prin-prof .main-prof .new-post > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prin-prof .main-prof .new-post > form textarea {
+  font-family: "Montserrat", sans-serif;
+  color: #545563;
+  border: 0;
+  padding: 10px;
+  border: 2px solid #7ec9f5;
+  border-radius: 5px;
+  resize: none;
 }
 
 .checking {
@@ -341,8 +379,7 @@ header > button {
 .prin-serv {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background-color: #fff;
+  height: 100vh;
 }
 .prin-serv h1 {
   color: #3957ed;
@@ -358,8 +395,10 @@ header > button {
 .prin-serv .categ .sec-pro {
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
+  border-radius: 5px;
   width: 400px;
-  border: 2px solid #3957ed;
   border-radius: 5px;
   padding: 30px;
   margin-right: 20px;
@@ -400,7 +439,7 @@ header > button {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border: 2px solid #3957ed;
+  box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
   border-radius: 5px;
   padding: 30px;
   margin-right: 20px;
@@ -435,33 +474,6 @@ header > button {
   background-color: #3957ed;
   color: white;
   font-weight: bold;
-}
-.prin-serv .categ .sec-chat {
-  position: absolute;
-  bottom: 0;
-  position: fixed;
-  right: 50px;
-}
-.prin-serv .categ .sec-chat button {
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  background-color: #3957ed;
-  border: 1px solid #3957ed;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-.prin-serv .categ .sec-chat button:hover {
-  font-weight: bold;
-}
-.prin-serv .categ .btn-close {
-  cursor: pointer;
-  width: 50px;
-  height: 25px;
-  background-color: #3957ed;
-  color: #fff;
-  border: 0;
-  border-radius: 0px 0px 3px 3px;
 }
 
 .prin-chat {
