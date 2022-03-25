@@ -50,7 +50,7 @@ const Citas = () => {
 
           for(let j=inicio; j<final; j++){
 
-            const hora = String(j) + ':00 - ' + String(j+1) + ':00';
+            const hora = String(j) + ':00 - ' + String(Number(j)+1) + ':00';
             const nuevaFecha = day + '/' + month + '/' + year + " " + hora;
             
             if(!seleccion.agenda.includes(nuevaFecha)){
