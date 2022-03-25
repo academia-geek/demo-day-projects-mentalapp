@@ -14,11 +14,12 @@ export const loginEmailPassword = (email, password) => {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, email, password)
          .then(({ user }) => {
-            dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName, email));
             console.log("Bienvenid@");
          })
          .catch((e) => {
             console.log("El usuario no existe");
+            console.log(e);
          });
    };
 };
@@ -28,7 +29,7 @@ export const loginGoogle = () => {
       const auth = getAuth();
       signInWithPopup(auth, google)
          .then(({ user }) => {
-            dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName, user.email));
             console.log(`Bienvenid@ ${user.displayName}`);
          })
          .catch((e) => {
@@ -42,7 +43,7 @@ export const loginFacebook = () => {
       const auth = getAuth();
       signInWithPopup(auth, facebook)
          .then(({ user }) => {
-            dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName, user.email));
             console.log(`Bienvenid@ ${user.displayName}`);
          })
          .catch((e) => {
@@ -51,12 +52,13 @@ export const loginFacebook = () => {
    };
 };
 
-export const loginSincrono = (id, displayname) => {
+export const loginSincrono = (id, displayname, email) => {
    return {
       type: types.login,
       payload: {
          id,
          displayname,
+         email
       },
    };
 };
@@ -67,7 +69,7 @@ export const logoutAsync = () => {
    return (dispatch) => {
       const auth = getAuth();
       signOut(auth)
-         .then((user) => {
+         .then(() => {
             dispatch(logoutSincrono());
          })
          .catch((error) => {
@@ -98,13 +100,13 @@ export const registroEmailPasswordNombre = (email, password, name) => {
    };
 };
 
-export const registroSync = (email, password, name) => {
+export const registroSync = (email, id, name) => {
    return {
       type: types.register,
       payload: {
+         id,
          email,
-         password,
-         name,
+         name
       },
    };
 };
