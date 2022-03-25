@@ -277,9 +277,22 @@ header > button {
   justify-content: center;
   flex-wrap: wrap;
 }
+.prin-prof .main-prof button {
+  cursor: pointer;
+  background: linear-gradient(180deg, #7ec9f5 0%, #3957ed 100%);
+  border: 0;
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+}
 .prin-prof .main-prof .main-per {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 400px;
   border-radius: 5px;
@@ -306,25 +319,27 @@ header > button {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border-radius: 5px;
+  height: 400px;
+  border-left: 2px solid #3957ed;
   padding: 30px;
   margin-right: 20px;
-}
-.prin-prof .main-data hr {
-  width: 100%;
-  border: 1px solid #7ec9f5;
+  overflow-y: scroll;
 }
 .prin-prof .main-data h2 {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Nunito", sans-serif;
   color: #3957ed;
+  border-bottom: 2px solid #7ec9f5;
   font-size: 18px;
 }
 .prin-prof .main-data p {
   margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   text-align: left;
   font-size: 12px;
+  border-bottom: 2px solid #7ec9f5;
   font-family: "Montserrat", sans-serif;
 }
 .prin-prof .main-data img {
@@ -341,6 +356,21 @@ header > button {
 }
 .prin-prof .main-data .sec-act h6 {
   margin-left: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.checking {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3957ed;
+  color: white;
   font-family: "Nunito", sans-serif;
 }
 
@@ -390,6 +420,8 @@ header > button {
   cursor: pointer;
   border: 1px solid #3957ed;
   border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
   height: 50px;
   background-color: transparent;
   margin-bottom: 15px;
@@ -428,9 +460,11 @@ header > button {
 .prin-serv .categ .sec-for > div button {
   cursor: pointer;
   border: 1px solid #3957ed;
+  font-family: "Nunito", sans-serif;
   border-radius: 5px;
   height: 50px;
   color: #3957ed;
+  font-size: 14px;
   background-color: transparent;
 }
 .prin-serv .categ .sec-for > div button:hover {
@@ -483,6 +517,7 @@ header > button {
 .prin-chat .inter-chat {
   display: flex;
   height: 60%;
+  width: 100%;
   flex-direction: column;
   justify-content: end;
 }
@@ -512,8 +547,12 @@ header > button {
 }
 .prin-chat .ent-chat {
   display: flex;
+  justify-content: center;
   align-content: end;
   margin-bottom: 10px;
+}
+.prin-chat .ent-chat form {
+  width: 80%;
 }
 .prin-chat .ent-chat input {
   width: 100%;

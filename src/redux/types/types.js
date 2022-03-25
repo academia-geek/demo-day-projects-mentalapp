@@ -3,3 +3,8 @@ export const types = {
   logout: "logout",
   register: "register",
 };
+
+export const typesChat = {
+  list: "list",
+  add: "add",
+};
