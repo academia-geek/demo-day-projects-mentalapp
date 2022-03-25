@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import {db} from '../../../firebase/firebaseConfig';
 import { useSelector } from 'react-redux';
 import { useForm } from '../../../hooks/useForm';
@@ -11,6 +11,7 @@ const Citas = () => {
   const seleccion = profesionales.find((pro)=>(pro.id===profesional));
   const [cargando, setCargando] = useState(true);
   const {name, email} = useSelector((store) => store.user);
+  const [alerta, setAlerta] = useState("");
 
   const [values, handleInputChange, reset] = useForm({
       nombre: name!==undefined ? name : "",
@@ -90,7 +91,28 @@ const Citas = () => {
   const handleSubmit = (e) => {
 
       e.preventDefault();
-      reset();
+      if(profesional!==""){
+          
+          setAlerta("Agendando cita...")
+
+          const profesionalActualizado = {
+            ...seleccion,
+            agenda: [...seleccion.agenda, fecha]
+          }
+          
+          setDoc(doc(db, "profesionales", profesional), profesionalActualizado)
+              .then(()=>{
+                setAlerta(`Cita agendada correctamente para ${fecha}`);
+                reset();
+              })
+              .catch((e)=>{
+                  console.log(e);
+                  setAlerta("No se pudo agendar la cita. Inténtalo de nuevo.")
+              })
+
+      } else{
+          setAlerta("Selecciona un profesional");
+      }
 
   }
 
@@ -179,6 +201,9 @@ const Citas = () => {
           </div>
           <button >Agendar cita</button>
         </form>
+        <div className={alerta===""? "d-none" : "alerta"}>
+            <h6>{alerta}</h6>
+        </div>
     </main>
   )
 }

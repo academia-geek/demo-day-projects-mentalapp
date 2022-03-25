@@ -32,7 +32,7 @@ export const AppRouter = () => {
          }
          setChecking(false);
       });
-   }, []);
+   }, [dispatch]);
 
    if (checking) {
       return (

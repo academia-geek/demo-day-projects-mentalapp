@@ -38,6 +38,10 @@
     transform: rotate(360deg);
   }
 }
+.d-none {
+  display: none;
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;
@@ -708,6 +712,12 @@ header > button {
 }
 .cntr-citas form > button:hover {
   background-color: #7ec9f5;
+}
+.cntr-citas .alerta h6 {
+  color: #3957ed;
+  font-family: "Nunito", sans-serif;
+  margin: 10px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */
