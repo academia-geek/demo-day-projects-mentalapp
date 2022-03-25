@@ -92,7 +92,7 @@ export const registroEmailPasswordNombre = (email, password, name) => {
             await updateProfile(auth.currentUser, { displayName: name });
 
             dispatch(registroSync(user.email, user.uid, user.displayName));
-            dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName, email));
          })
          .catch((e) => {
             console.log(e);

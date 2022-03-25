@@ -12,16 +12,20 @@ import Foro from "../components/Foro/Foro";
 import Citas from "../components/Servicios/Citas/Citas";
 import Chat from "../components/Servicios/Chat/Chat";
 import Perfil from "../components/Perfil/Perfil";
+import { useDispatch } from "react-redux";
+import {loginSincrono} from '../../src/redux/actions/actionLogin';
 
 export const AppRouter = () => {
-   const [checking, setChecking] = useState(true);
 
+   const [checking, setChecking] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(true);
+   const dispatch = useDispatch();
 
    useEffect(() => {
       const auth = getAuth();
       onAuthStateChanged(auth, (user) => {
          if (user?.uid) {
+            dispatch(loginSincrono(user.uid, user.displayName, user.email));
             setIsLoggedIn(true);
          } else {
             setIsLoggedIn(false);

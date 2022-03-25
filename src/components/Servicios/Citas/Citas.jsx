@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../../../firebase/firebaseConfig';
+import { useSelector } from 'react-redux';
+import { useForm } from '../../../hooks/useForm';
 
 const Citas = () => {
 
@@ -8,6 +10,16 @@ const Citas = () => {
   const [profesional, setProfesional] = useState("");
   const seleccion = profesionales.find((pro)=>(pro.id===profesional));
   const [cargando, setCargando] = useState(true);
+  const {name, email} = useSelector((store) => store.user);
+
+  const [values, handleInputChange, reset] = useForm({
+      nombre: name!==undefined ? name : "",
+      correo: email!==undefined ? email : "",
+      telefono: "",
+      fecha: ""
+  });
+
+  const {nombre, correo, telefono, fecha} = values;
 
   useEffect(()=>{
 
@@ -65,7 +77,7 @@ const Citas = () => {
 
     return resultado;
 
-  }
+  };
 
   if(cargando){
     return(
@@ -75,10 +87,17 @@ const Citas = () => {
     )
   }
 
+  const handleSubmit = (e) => {
+
+      e.preventDefault();
+      reset();
+
+  }
+
   return (
     <main className='cntr-citas'>
         <h3>Cita con un profesional</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <div className='cntr-profesionales'>
                 <h4>Escoge un profesional</h4>
@@ -105,20 +124,49 @@ const Citas = () => {
                 <h4>Agenda tu cita</h4>
                 <div>
                     <label>Nombre</label>
-                    <input/>
+                    <input
+                        type ='text'
+                        name = 'nombre'
+                        value = {nombre}
+                        onChange = {handleInputChange}
+                        autoComplete = 'on'
+                        placeholder='Ingresa tu nombre'
+                        required
+                    />
                 </div>
                 <div>
                     <label>Correo</label>
-                    <input/>
+                    <input
+                        type ='email'
+                        name = 'correo'
+                        value = {correo}
+                        onChange = {handleInputChange}
+                        autoComplete = 'on'
+                        placeholder='Ingresa tu correo electrónico'
+                        required
+                    />
                 </div>
                 <div>
                     <label>Teléfono</label>
-                    <input/>
+                    <input
+                        type ='number'
+                        name = 'telefono'
+                        value = {telefono}
+                        onChange = {handleInputChange}
+                        autoComplete = 'on'
+                        placeholder='Ingresa tu teléfono'
+                        required
+                    />
                 </div>
                 <div>
                   {seleccion!==undefined &&
-                      <select>
-                        <option>Seleccionar una fecha y hora</option>
+                      <select
+                        name = 'fecha'
+                        value = {fecha}
+                        onChange = {handleInputChange} 
+                        required                 
+                      >
+                        <option value=''>Seleccionar una fecha y hora</option>
                         {
                           getFechas().map((fec, index)=>(
                               <option key={index}>{fec}</option>
