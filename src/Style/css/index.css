@@ -422,6 +422,7 @@ header > button {
   box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
   border-radius: 5px;
   width: 400px;
+  border: 2px solid #3957ed;
   border-radius: 5px;
   padding: 30px;
   margin-right: 20px;
@@ -463,6 +464,7 @@ header > button {
   flex-direction: column;
   width: 400px;
   box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
+  border: 2px solid #3957ed;
   border-radius: 5px;
   padding: 30px;
   margin-right: 20px;
