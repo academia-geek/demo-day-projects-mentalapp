@@ -6,6 +6,42 @@
   box-sizing: border-box;
 }
 
+.loader {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #545563;
+}
+.loader::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  margin: 15px 0;
+  border: solid 5px #545563;
+  border-radius: 50%;
+  border-top: solid 5px #7ec9f5;
+  opacity: 50%;
+  animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.d-none {
+  display: none;
+}
+
 .hidden {
   display: none;
 }
@@ -240,6 +276,7 @@ header {
   padding: 15px 25px;
   font-family: "Montserrat", sans-serif;
   background-color: #FFFFFF;
+  margin-bottom: 30px;
 }
 header > div {
   display: flex;
@@ -325,6 +362,9 @@ header > button {
   header > div {
     margin-right: 50px;
   }
+  header > div h1 {
+    font-size: 20px;
+  }
   header > nav {
     display: none;
   }
@@ -335,20 +375,20 @@ header > button {
     justify-content: center;
     background: none;
     border: none;
-    padding: 10px;
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 25px;
     transition: all 0.3s linear;
     cursor: pointer;
   }
   header > button img {
-    width: 30px;
+    width: 35px;
   }
   header.menu {
     background-color: #3957ed;
     position: absolute;
     top: 0;
+    z-index: 100;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -418,9 +458,22 @@ header > button {
   justify-content: center;
   flex-wrap: wrap;
 }
+.prin-prof .main-prof button {
+  cursor: pointer;
+  background: linear-gradient(180deg, #7ec9f5 0%, #3957ed 100%);
+  border: 0;
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+}
 .prin-prof .main-prof .main-per {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 400px;
   border-radius: 5px;
@@ -447,25 +500,27 @@ header > button {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border-radius: 5px;
+  height: 400px;
+  border-left: 2px solid #3957ed;
   padding: 30px;
   margin-right: 20px;
-}
-.prin-prof .main-data hr {
-  width: 100%;
-  border: 1px solid #7ec9f5;
+  overflow-y: scroll;
 }
 .prin-prof .main-data h2 {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Nunito", sans-serif;
   color: #3957ed;
+  border-bottom: 2px solid #7ec9f5;
   font-size: 18px;
 }
 .prin-prof .main-data p {
   margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   text-align: left;
   font-size: 12px;
+  border-bottom: 2px solid #7ec9f5;
   font-family: "Montserrat", sans-serif;
 }
 .prin-prof .main-data img {
@@ -482,6 +537,21 @@ header > button {
 }
 .prin-prof .main-data .sec-act h6 {
   margin-left: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.checking {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3957ed;
+  color: white;
   font-family: "Nunito", sans-serif;
 }
 
@@ -531,6 +601,8 @@ header > button {
   cursor: pointer;
   border: 1px solid #3957ed;
   border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
   height: 50px;
   background-color: transparent;
   margin-bottom: 15px;
@@ -569,9 +641,11 @@ header > button {
 .prin-serv .categ .sec-for > div button {
   cursor: pointer;
   border: 1px solid #3957ed;
+  font-family: "Nunito", sans-serif;
   border-radius: 5px;
   height: 50px;
   color: #3957ed;
+  font-size: 14px;
   background-color: transparent;
 }
 .prin-serv .categ .sec-for > div button:hover {
@@ -624,6 +698,7 @@ header > button {
 .prin-chat .inter-chat {
   display: flex;
   height: 60%;
+  width: 100%;
   flex-direction: column;
   justify-content: end;
 }
@@ -653,8 +728,12 @@ header > button {
 }
 .prin-chat .ent-chat {
   display: flex;
+  justify-content: center;
   align-content: end;
   margin-bottom: 10px;
+}
+.prin-chat .ent-chat form {
+  width: 80%;
 }
 .prin-chat .ent-chat input {
   width: 100%;
@@ -683,6 +762,139 @@ header > button {
   color: white;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
+}
+
+.cntr-citas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cntr-citas h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  color: #3957ed;
+}
+.cntr-citas form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-family: "Nunito", sans-serif;
+}
+.cntr-citas form > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cntr-citas form > div > div {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cntr-citas form > div > div h4 {
+  color: #7ec9f5;
+  margin: 15px 0;
+  padding: 5px;
+  border-bottom: 1px solid #7ec9f5;
+}
+.cntr-citas form > div > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div > div label, .cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  color: #545563;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+.cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  margin: 5px 0;
+  padding: 5px;
+  border: solid 1px #545563;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div {
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #3957ed #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div input {
+  display: none;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div input:checked ~ label {
+  color: white;
+  background-color: #3957ed;
+  border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div label {
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+  border: solid #7ec9f5 1px;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div label:hover {
+  border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar {
+  width: 10px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-thumb {
+  background-color: #3957ed;
+  border-radius: 8px;
+  border: 3px solid #FFFFFF;
+}
+@media screen and (max-width: 400px) {
+  .cntr-citas form > div > div {
+    width: 100%;
+  }
+}
+.cntr-citas form > button {
+  width: 90%;
+  max-width: 300px;
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #3957ed;
+  border: none;
+  border-radius: 10px;
+}
+.cntr-citas form > button:hover {
+  background-color: #7ec9f5;
+}
+.cntr-citas .alerta h6 {
+  color: #3957ed;
+  font-family: "Nunito", sans-serif;
+  margin: 10px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -12,3 +12,8 @@ export const typesForo = {
    agregarComentario: "agregarComentario",
    listarComentario: "listarComentario",
 };
+
+export const typesChat = {
+   list: "list",
+   add: "add",
+};
