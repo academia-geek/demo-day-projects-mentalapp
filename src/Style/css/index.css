@@ -156,6 +156,31 @@
   color: #545563;
 }
 
+.cont-elegir {
+  width: 90%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.categoria {
+  width: 70%;
+  height: 5rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;

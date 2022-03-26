@@ -13,6 +13,7 @@ import Chat from "../components/Servicios/Chat/Chat";
 import Login from "../components/Login/Login";
 import Perfil from "../components/Perfil/Perfil";
 import Tema from "../components/Foro/Tema";
+import ElegirTema from "../components/Foro/ElegirTema";
 
 export const AppRouter = () => {
    const [checking, setChecking] = useState(true);
@@ -63,7 +64,8 @@ export const AppRouter = () => {
             <Route path="/inicio" element={<Inicio />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
-            <Route path="/foro" element={<Foro />} />
+            <Route path="/foro" element={<ElegirTema />} />
+            <Route path="/foro/:categoria" element={<Foro />} />
             <Route path="/tema" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
          </Routes>

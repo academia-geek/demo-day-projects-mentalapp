@@ -1,10 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommentIcon from "@mui/icons-material/Comment";
 import AddIcon from "@mui/icons-material/Add";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import {
+   agregarTemaAsyn,
+   listarCategoriasAsyn,
+   listarTemaAsyn,
+} from "../../redux/actions/actionsForo";
 
 const Foro = () => {
+   const dispatch = useDispatch();
+
+   const { categorias } = useSelector((store) => store.categorias);
+   const { temas } = useSelector((store) => store.foro);
+
+   console.log(temas);
+
+   const { categoria } = useParams();
+
+   const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
+
+   //console.log(categoriaSelected);
+
    const [agregarTema, setAgregarTema] = useState("agregar");
    const [ocultarTema, setOcultarTema] = useState("hidden");
 
@@ -24,18 +44,35 @@ const Foro = () => {
          content: "",
       },
       onSubmit: (data) => {
-         console.log(data);
+         const { title, content } = data;
+
+         const nuevoTema = {
+            codigo: Date.now(),
+            nombre: title,
+            descripcion: content,
+            categoria: categoria,
+            comentarios: [],
+         };
+
+         //console.log(nuevoTema);
+
+         dispatch(agregarTemaAsyn(nuevoTema));
+
+         formik.handleReset();
       },
    });
+
+   useEffect(() => {
+      dispatch(listarCategoriasAsyn());
+      dispatch(listarTemaAsyn());
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <div className="cont--foro">
          <div className="foro--titulo">
-            <h1>Ansiedad</h1>
-            <span>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium eveniet
-               blanditiis repellat, nostrum ut adipisci.
-            </span>
+            <h1>{categoriaSelected.nombre}</h1>
+            <span>{categoriaSelected.descripcion}</span>
          </div>
 
          <div className="foro">
@@ -55,18 +92,20 @@ const Foro = () => {
                         <span>10 comentarios</span>
                      </div>
                   </div>
-                  <div className="card">
-                     <div className="card--info">
-                        <h2>Lorem ipsum</h2>
-                        <span>
-                           Escrito por: <b>Anónimo</b>
-                        </span>
+                  {temas.map((t, index) => (
+                     <div className="card" key={index}>
+                        <div className="card--info">
+                           <h2>{t.nombre}</h2>
+                           <span>
+                              Escrito por: <b>Anónimo</b>
+                           </span>
+                        </div>
+                        <div className="card--comment">
+                           <CommentIcon />
+                           <span>10 comentarios</span>
+                        </div>
                      </div>
-                     <div className="card--comment">
-                        <CommentIcon />
-                        <span>10 comentarios</span>
-                     </div>
-                  </div>
+                  ))}
                </div>
             </div>
 
