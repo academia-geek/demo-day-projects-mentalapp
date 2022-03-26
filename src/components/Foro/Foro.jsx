@@ -72,7 +72,11 @@ const Foro = () => {
    // }, []);
 
    if (categoriaSelected === undefined) {
-      return <h2>Cargando...</h2>;
+      return (
+         <div className="loader">
+            <h2>Cargando foro...</h2>
+         </div>
+      );
    }
 
    return (
