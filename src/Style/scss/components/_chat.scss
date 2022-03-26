@@ -16,6 +16,7 @@
   .inter-chat {
     display: flex;
     height: 60%;
+    width: 100%;
     flex-direction: column;
     justify-content: end;
     .text-ent {
@@ -49,8 +50,12 @@
   }
   .ent-chat {
     display: flex;
+    justify-content: center;
     align-content: end;
     margin-bottom: 10px;
+    form {
+      width: 80%;
+    }
     input {
       width: 100%;
       border: 2px solid $primary;

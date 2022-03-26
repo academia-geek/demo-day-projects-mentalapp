@@ -6,6 +6,219 @@
   box-sizing: border-box;
 }
 
+.loader {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #545563;
+}
+.loader::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  margin: 15px 0;
+  border: solid 5px #545563;
+  border-radius: 50%;
+  border-top: solid 5px #7ec9f5;
+  opacity: 50%;
+  animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.d-none {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.cont--foro {
+  width: 85%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.foro--titulo h1 {
+  color: #3957ed;
+}
+
+.foro {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 2rem;
+}
+
+.foro--agregar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.foro--agregar .agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  height: 3em;
+  background-color: #3957ed;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.foro--agregar .regresar {
+  width: 50%;
+  height: 3em;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.foro--agregar form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.ocultar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.foro--cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card {
+  font-size: 0.9rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 90%;
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.card:hover {
+  transform: scale(1.03);
+  animation-duration: 1s;
+}
+.card .card--info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.card .card--info span,
+.card .card--info p {
+  color: #545563;
+}
+.card .card--comment {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont--tema {
+  width: 55%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-end;
+  font-family: "Nunito", sans-serif;
+}
+.cont--tema .tema {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cont--tema .tema--respuestas {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.respuestas--anadir {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.respuesta--card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1em;
+  border-bottom: 1px solid #444444;
+}
+.respuesta--card span {
+  color: #545563;
+}
+
+.cont-elegir {
+  width: 90%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.categoria {
+  width: 70%;
+  height: 5rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;
@@ -63,6 +276,7 @@ header {
   padding: 15px 25px;
   font-family: "Montserrat", sans-serif;
   background-color: #FFFFFF;
+  margin-bottom: 30px;
 }
 header > div {
   display: flex;
@@ -148,6 +362,9 @@ header > button {
   header > div {
     margin-right: 50px;
   }
+  header > div h1 {
+    font-size: 20px;
+  }
   header > nav {
     display: none;
   }
@@ -158,20 +375,20 @@ header > button {
     justify-content: center;
     background: none;
     border: none;
-    padding: 10px;
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 25px;
     transition: all 0.3s linear;
     cursor: pointer;
   }
   header > button img {
-    width: 30px;
+    width: 35px;
   }
   header.menu {
     background-color: #3957ed;
     position: absolute;
     top: 0;
+    z-index: 100;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -244,6 +461,7 @@ header > button {
 .prin-prof .main-prof .main-per {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 400px;
   border-radius: 5px;
@@ -266,45 +484,135 @@ header > button {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-.prin-prof .main-data {
+.prin-prof .main-prof .main-data {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border-radius: 5px;
+  height: 400px;
+  border-left: 2px solid #3957ed;
   padding: 30px;
   margin-right: 20px;
+  overflow-y: scroll;
 }
-.prin-prof .main-data hr {
-  width: 100%;
-  border: 1px solid #7ec9f5;
-}
-.prin-prof .main-data h2 {
+.prin-prof .main-prof .main-data h2 {
   text-align: center;
   margin-bottom: 10px;
   font-family: "Nunito", sans-serif;
   color: #3957ed;
+  border-bottom: 2px solid #7ec9f5;
   font-size: 18px;
 }
-.prin-prof .main-data p {
+.prin-prof .main-prof .main-data p {
   margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   text-align: left;
   font-size: 12px;
+  border-bottom: 2px solid #7ec9f5;
   font-family: "Montserrat", sans-serif;
 }
-.prin-prof .main-data img {
+.prin-prof .main-prof .main-data img {
   margin-top: 15px;
   border-radius: 5px;
 }
-.prin-prof .main-data .sec-act {
+.prin-prof .main-prof .main-data .sec-act {
   display: flex;
   align-items: center;
 }
-.prin-prof .main-data .sec-act img {
+.prin-prof .main-prof .main-data .sec-act img {
   width: 40px;
   border-radius: 50%;
 }
-.prin-prof .main-data .sec-act h6 {
+.prin-prof .main-prof .main-data .sec-act h6 {
   margin-left: 10px;
+  font-family: "Nunito", sans-serif;
+}
+.prin-prof .main-prof .main-data .sec-act button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  width: 70px;
+  height: 20px;
+  margin-left: 130px;
+  right: 10px;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  background-color: #c42626;
+}
+.prin-prof .main-prof .new-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 30px;
+  margin-right: 20px;
+  border-left: 2px solid #3957ed;
+}
+.prin-prof .main-prof .new-post p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.prin-prof .main-prof .new-post h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
+  color: #3957ed;
+  border-bottom: 2px solid #7ec9f5;
+  font-size: 18px;
+}
+.prin-prof .main-prof .new-post button {
+  cursor: pointer;
+  background: linear-gradient(180deg, #7ec9f5 0%, #3957ed 100%);
+  border: 0;
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+}
+.prin-prof .main-prof .new-post > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prin-prof .main-prof .new-post > form textarea {
+  font-family: "Montserrat", sans-serif;
+  color: #545563;
+  border: 0;
+  padding: 10px;
+  border: 2px solid #7ec9f5;
+  border-radius: 5px;
+  resize: none;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7ec9f5;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.checking {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3957ed;
+  color: white;
   font-family: "Nunito", sans-serif;
 }
 
@@ -312,7 +620,6 @@ header > button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #fff;
 }
 .prin-serv h1 {
   color: #3957ed;
@@ -328,6 +635,9 @@ header > button {
 .prin-serv .categ .sec-pro {
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
+  border-radius: 5px;
   width: 400px;
   border: 2px solid #3957ed;
   border-radius: 5px;
@@ -354,6 +664,8 @@ header > button {
   cursor: pointer;
   border: 1px solid #3957ed;
   border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
   height: 50px;
   background-color: transparent;
   margin-bottom: 15px;
@@ -368,6 +680,7 @@ header > button {
   display: flex;
   flex-direction: column;
   width: 400px;
+  box-shadow: 0 0 10px 0 rgba(44, 44, 44, 0.2);
   border: 2px solid #3957ed;
   border-radius: 5px;
   padding: 30px;
@@ -392,42 +705,17 @@ header > button {
 .prin-serv .categ .sec-for > div button {
   cursor: pointer;
   border: 1px solid #3957ed;
+  font-family: "Nunito", sans-serif;
   border-radius: 5px;
   height: 50px;
   color: #3957ed;
+  font-size: 14px;
   background-color: transparent;
 }
 .prin-serv .categ .sec-for > div button:hover {
   background-color: #3957ed;
   color: white;
   font-weight: bold;
-}
-.prin-serv .categ .sec-chat {
-  position: absolute;
-  bottom: 0;
-  position: fixed;
-  right: 50px;
-}
-.prin-serv .categ .sec-chat button {
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  background-color: #3957ed;
-  border: 1px solid #3957ed;
-  border-radius: 5px 5px 0px 0px;
-  color: white;
-}
-.prin-serv .categ .sec-chat button:hover {
-  font-weight: bold;
-}
-.prin-serv .categ .btn-close {
-  cursor: pointer;
-  width: 50px;
-  height: 25px;
-  background-color: #3957ed;
-  color: #fff;
-  border: 0;
-  border-radius: 0px 0px 3px 3px;
 }
 
 .prin-chat {
@@ -447,6 +735,7 @@ header > button {
 .prin-chat .inter-chat {
   display: flex;
   height: 60%;
+  width: 100%;
   flex-direction: column;
   justify-content: end;
 }
@@ -476,8 +765,12 @@ header > button {
 }
 .prin-chat .ent-chat {
   display: flex;
+  justify-content: center;
   align-content: end;
   margin-bottom: 10px;
+}
+.prin-chat .ent-chat form {
+  width: 80%;
 }
 .prin-chat .ent-chat input {
   width: 100%;
@@ -506,6 +799,139 @@ header > button {
   color: white;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
+}
+
+.cntr-citas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cntr-citas h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  color: #3957ed;
+}
+.cntr-citas form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-family: "Nunito", sans-serif;
+}
+.cntr-citas form > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cntr-citas form > div > div {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cntr-citas form > div > div h4 {
+  color: #7ec9f5;
+  margin: 15px 0;
+  padding: 5px;
+  border-bottom: 1px solid #7ec9f5;
+}
+.cntr-citas form > div > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div > div label, .cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  color: #545563;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+.cntr-citas form > div > div > div input, .cntr-citas form > div > div > div select {
+  margin: 5px 0;
+  padding: 5px;
+  border: solid 1px #545563;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div {
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #3957ed #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div input {
+  display: none;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div input:checked ~ label {
+  color: white;
+  background-color: #3957ed;
+  border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div label {
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+  border: solid #7ec9f5 1px;
+  border-radius: 8px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div > div label:hover {
+  border-color: #3957ed;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar {
+  width: 10px;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+.cntr-citas form > div > div.cntr-profesionales > div::-webkit-scrollbar-thumb {
+  background-color: #3957ed;
+  border-radius: 8px;
+  border: 3px solid #FFFFFF;
+}
+@media screen and (max-width: 400px) {
+  .cntr-citas form > div > div {
+    width: 100%;
+  }
+}
+.cntr-citas form > button {
+  width: 90%;
+  max-width: 300px;
+  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #3957ed;
+  border: none;
+  border-radius: 10px;
+}
+.cntr-citas form > button:hover {
+  background-color: #7ec9f5;
+}
+.cntr-citas .alerta h6 {
+  color: #3957ed;
+  font-family: "Nunito", sans-serif;
+  margin: 10px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */

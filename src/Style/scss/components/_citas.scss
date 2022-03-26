@@ -1,0 +1,134 @@
+@import '../base/variables';
+
+.cntr-citas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h3{
+        font-family: $montserrat;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        color: $primary;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+        font-family: $nunito;
+        >div{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            >div{
+                width: 400px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                h4{
+                    color: $secundary;
+                    margin: 15px 0;
+                    padding: 5px;
+                    border-bottom: 1px solid $secundary;
+                }
+                >div{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    margin: 10px 0;
+                    label, input, select{
+                        color: $grey;
+                        font-size: 16px;
+                        width: 100%;
+                        text-align: left;
+                    }
+                    input, select{
+                        margin: 5px 0;
+                        padding: 5px;
+                        border: solid 1px $grey;
+                        border-radius: 8px;
+                    }
+                }
+                &.cntr-profesionales{
+                    >div{
+                        max-height: 400px;
+                        overflow-y: scroll;
+                        scrollbar-width: thin;
+                        scrollbar-color: $primary $white;
+                        >div{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 10px 0;
+                            input{
+                                display: none;
+                                &:checked ~label{
+                                    color: white;
+                                    background-color: $primary;
+                                    border-color: $primary;
+                                }
+                            }
+                            label{
+                                height: 100%;
+                                padding: 8px;
+                                text-align: center;
+                                border: solid $secundary 1px;
+                                border-radius: 8px;
+                                &:hover{
+                                    border-color: $primary;
+                                }
+                            }
+                        }
+                        &::-webkit-scrollbar {
+                            width: 10px;
+                        }
+                        &::-webkit-scrollbar-track {
+                            background: $white;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $primary;
+                            border-radius: 8px;
+                            border: 3px solid $white;
+                        }
+                    }
+                }
+                @media screen and (max-width:400px){
+                    width: 100%;
+                }
+            }
+        }
+        >button{
+            width: 90%;
+            max-width: 300px;
+            padding: 10px;
+            font-family: $nunito;
+            font-size: 16px;
+            font-weight: 600;
+            color: $white;
+            background-color: $primary;
+            border: none;
+            border-radius: 10px;
+            &:hover{
+                background-color: $secundary;
+            }
+        }
+    }
+    .alerta h6{
+        color: $primary;
+        font-family: $nunito;
+        margin: 10px;
+        font-size: 14px;
+    }
+}
