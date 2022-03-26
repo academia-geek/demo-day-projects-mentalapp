@@ -25,7 +25,6 @@ const Chat = () => {
     return unsub;
   }, []);
 
-  // const mensaje = useSelector((store) => store.mensajes.mensajes);
   const usuario = useSelector((store) => store.user);
 
   // Agregar mensaje al chat
