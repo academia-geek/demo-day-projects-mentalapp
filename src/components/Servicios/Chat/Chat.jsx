@@ -1,7 +1,8 @@
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { db, orderBy } from "../../../firebase/firebaseConfig";
+import { db } from "../../../firebase/firebaseConfig";
+import { orderBy } from "firebase/firestore";
 import { useForm } from "../../../hooks/useForm";
 import {
   addNewMessage,
@@ -13,13 +14,16 @@ const Chat = () => {
 
   const [mensajes, setMensajes] = useState([{ texto: "Cargando chat..." }]);
 
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "chat"), (snapshot) =>
-        setMensajes(snapshot.docs.map((doc) => doc.data()))
-      ),
-    []
-  );
+  useEffect(() => {
+    const collectionRef = collection(db, "chat");
+    const q = query(collectionRef, orderBy("fecha", "asc"));
+
+    const unsub = onSnapshot(q, (snapshot) =>
+      setMensajes(snapshot.docs.map((doc) => doc.data()))
+    );
+
+    return unsub;
+  }, []);
 
   // const mensaje = useSelector((store) => store.mensajes.mensajes);
   const usuario = useSelector((store) => store.user);
@@ -35,11 +39,11 @@ const Chat = () => {
   const handleMessage = (e) => {
     e.preventDefault();
     dispatch(addNewMessage({ texto, uid, fecha }));
-    reset()
+    reset();
   };
 
   let uid = usuario.id;
-  let fecha = Date.now();
+  let fecha = new Date();
 
   return (
     <>
@@ -71,6 +75,7 @@ const Chat = () => {
               placeholder="Ingresa tu mensaje"
               onChange={handleInputChange}
               autoComplete="off"
+              required
             />
           </form>
         </div>
