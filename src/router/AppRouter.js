@@ -14,8 +14,11 @@ import Login from "../components/Login/Login";
 import Perfil from "../components/Perfil/Perfil";
 import Tema from "../components/Foro/Tema";
 import ElegirTema from "../components/Foro/ElegirTema";
+import { useDispatch } from "react-redux";
+import { listarCategoriasAsyn, listarTemaAsyn } from "../redux/actions/actionsForo";
 
 export const AppRouter = () => {
+   const dispatch = useDispatch();
    const [checking, setChecking] = useState(true);
 
    const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -28,8 +31,14 @@ export const AppRouter = () => {
          } else {
             setIsLoggedIn(false);
          }
+
          setChecking(false);
       });
+
+      dispatch(listarCategoriasAsyn());
+      dispatch(listarTemaAsyn());
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    if (checking) {
@@ -66,7 +75,7 @@ export const AppRouter = () => {
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<ElegirTema />} />
             <Route path="/foro/:categoria" element={<Foro />} />
-            <Route path="/tema" element={<Tema />} />
+            <Route path="/foro/:categoria/:codigo" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
          </Routes>
          <FooterChat />

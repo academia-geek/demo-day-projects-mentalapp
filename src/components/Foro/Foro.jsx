@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CommentIcon from "@mui/icons-material/Comment";
 import AddIcon from "@mui/icons-material/Add";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import {
-   agregarTemaAsyn,
-   listarCategoriasAsyn,
-   listarTemaAsyn,
-} from "../../redux/actions/actionsForo";
+import { useParams, Link } from "react-router-dom";
+import { agregarTemaAsyn } from "../../redux/actions/actionsForo";
 
 const Foro = () => {
    const dispatch = useDispatch();
 
    const { categorias } = useSelector((store) => store.categorias);
    const { temas } = useSelector((store) => store.foro);
-
-   console.log(temas);
-
    const { categoria } = useParams();
+
+   // const hola = () => {
+   //    if (temas === undefined) {
+   //       return <h2>Cargando</h2>;
+   //    }
+   // };
+
+   const temasFiltered = temas.filter((t) => t.categoria === categoria);
+
+   console.log(temasFiltered);
 
    const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
 
@@ -62,11 +65,15 @@ const Foro = () => {
       },
    });
 
-   useEffect(() => {
-      dispatch(listarCategoriasAsyn());
-      dispatch(listarTemaAsyn());
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, []);
+   // useEffect(() => {
+   //    dispatch(listarCategoriasAsyn());
+   //    dispatch(listarTemaAsyn());
+   //    // eslint-disable-next-line react-hooks/exhaustive-deps
+   // }, []);
+
+   if (categoriaSelected === undefined) {
+      return <h2>Cargando...</h2>;
+   }
 
    return (
       <div className="cont--foro">
@@ -92,8 +99,8 @@ const Foro = () => {
                         <span>10 comentarios</span>
                      </div>
                   </div>
-                  {temas.map((t, index) => (
-                     <div className="card" key={index}>
+                  {temasFiltered.map((t, index) => (
+                     <Link to={"/foro/" + categoria + "/" + t.codigo} className="card" key={index}>
                         <div className="card--info">
                            <h2>{t.nombre}</h2>
                            <span>
@@ -104,7 +111,7 @@ const Foro = () => {
                            <CommentIcon />
                            <span>10 comentarios</span>
                         </div>
-                     </div>
+                     </Link>
                   ))}
                </div>
             </div>

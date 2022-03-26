@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
@@ -20,6 +20,10 @@ const Navbar = () => {
    const handleLogout = () => {
       dispatch(logoutAsync());
    };
+
+   useEffect(() => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <header className={clase}>
