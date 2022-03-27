@@ -12,17 +12,12 @@ const Foro = () => {
 
    const { categorias } = useSelector((store) => store.categorias);
    const { temas } = useSelector((store) => store.foro);
+   const user = useSelector((store) => store.user);
    const { categoria } = useParams();
-
-   // const hola = () => {
-   //    if (temas === undefined) {
-   //       return <h2>Cargando</h2>;
-   //    }
-   // };
 
    const temasFiltered = temas.filter((t) => t.categoria === categoria);
 
-   console.log(temasFiltered);
+   console.log(user);
 
    const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
 
@@ -64,12 +59,6 @@ const Foro = () => {
          formik.handleReset();
       },
    });
-
-   // useEffect(() => {
-   //    dispatch(listarCategoriasAsyn());
-   //    dispatch(listarTemaAsyn());
-   //    // eslint-disable-next-line react-hooks/exhaustive-deps
-   // }, []);
 
    if (categoriaSelected === undefined) {
       return (
@@ -113,7 +102,7 @@ const Foro = () => {
                         </div>
                         <div className="card--comment">
                            <CommentIcon />
-                           <span>10 comentarios</span>
+                           <span>{Object.keys(t.comentarios).length} comentarios</span>
                         </div>
                      </Link>
                   ))}

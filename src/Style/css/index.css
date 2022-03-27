@@ -156,7 +156,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  align-items: flex-end;
   font-family: "Nunito", sans-serif;
 }
 .cont--tema .tema {
@@ -165,16 +164,32 @@
   gap: 1rem;
 }
 .cont--tema .tema--respuestas {
-  width: 90%;
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 2rem;
 }
 
 .respuestas--anadir {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+}
+.respuestas--anadir form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.respuestas--anadir form button {
+  height: 2rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .respuestas {

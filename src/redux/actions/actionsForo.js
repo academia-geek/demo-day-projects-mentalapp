@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { typesForo } from "../types/types";
 
@@ -62,5 +62,28 @@ export const listarTemaSyn = (temas) => {
    return {
       type: typesForo.listarTema,
       payload: temas,
+   };
+};
+
+export const editarTemaAsyn = (codigo, tema) => {
+   return async (dispatch) => {
+      const traerCollection = collection(db, "foro");
+      const q = query(traerCollection, where("codigo", "==", codigo));
+      const datosQ = await getDocs(q);
+      let id;
+      datosQ.forEach(async (docu) => {
+         id = docu.id;
+      });
+      console.log(id);
+
+      const docRef = doc(db, "foro", id);
+      await updateDoc(docRef, tema).then(() => listarTemaAsyn());
+   };
+};
+
+export const editarTemaSyn = (codigo, tema) => {
+   return {
+      type: typesForo.editarTema,
+      payload: tema,
    };
 };
