@@ -85,6 +85,18 @@ header{
                     display: flex;
                 }
             }
+            >button{
+                border: none;
+                background-color: $primary;
+                padding: 10px 15px;
+                font-family: $nunito;
+                border-radius: 8px;
+                color: $white;
+                font-size: 15px;
+                &:hover{
+                    background-image: $degradado;
+                }
+            }
         }
     }
     >button{
@@ -118,7 +130,7 @@ header{
         }
         &.menu{
             background-color: $primary;
-            position: absolute;
+            position: fixed;
             top: 0;
             z-index: 100;
             width: 100%;

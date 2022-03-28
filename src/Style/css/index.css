@@ -355,6 +355,18 @@ header > nav > div:hover h4 {
 header > nav > div:hover .desplegable {
   display: flex;
 }
+header > nav > div > button {
+  border: none;
+  background-color: #3957ed;
+  padding: 10px 15px;
+  font-family: "Nunito", sans-serif;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 15px;
+}
+header > nav > div > button:hover {
+  background-image: linear-gradient(#3957ed, #7ec9f5);
+}
 header > button {
   display: none;
 }
@@ -386,7 +398,7 @@ header > button {
   }
   header.menu {
     background-color: #3957ed;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;

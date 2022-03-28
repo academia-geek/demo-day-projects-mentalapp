@@ -1,10 +1,15 @@
 import React from 'react'
+import Bienvenida from './Bienvenida'
+import Experiencias from './Experiencias'
+import SobreNosotros from './SobreNosotros'
 
 const Inicio = () => {
   return (
-    <div>
-        <h2>Inicio</h2>
-    </div>
+    <main>
+        <Bienvenida/>
+        <SobreNosotros/>
+        <Experiencias/>
+    </main>
   )
 }
 
