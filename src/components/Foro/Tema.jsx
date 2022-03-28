@@ -54,7 +54,7 @@ const Tema = () => {
       <div className="cont--tema">
          <div className="tema">
             <h1>{temaSelected.nombre}</h1>
-            <span>Escrito por: anónimo</span>
+            <span>Escrito por: {temaSelected.usuario}</span>
             <p>{temaSelected.descripcion}</p>
          </div>
          <div className="tema--respuestas">

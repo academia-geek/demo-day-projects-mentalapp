@@ -1,4 +1,13 @@
-import { addDoc, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
+import {
+   addDoc,
+   collection,
+   doc,
+   getDocs,
+   orderBy,
+   query,
+   updateDoc,
+   where,
+} from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { typesForo } from "../types/types";
 
@@ -31,6 +40,7 @@ export const agregarTemaAsyn = (newTema) => {
       addDoc(collection(db, "foro"), newTema)
          .then((resp) => {
             dispatch(agregarTemaSyn(newTema));
+            dispatch(listarTemaAsyn());
          })
          .catch((error) => {
             console.log(error);
@@ -48,6 +58,7 @@ export const agregarTemaSyn = (newTema) => {
 export const listarTemaAsyn = () => {
    return async (dispatch) => {
       const traerDatos = await getDocs(collection(db, "foro"));
+      //const q = query(traerDatos, orderBy("codigo", "desc"));
       const productos = [];
       traerDatos.forEach((doc) => {
          productos.push({
