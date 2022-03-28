@@ -595,14 +595,7 @@ header > button {
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #7ec9f5;
-  border-radius: 20px;
-  border: 2px solid #f1f2f3;
+  display: none;
 }
 
 .checking {
@@ -624,8 +617,27 @@ header > button {
 .prin-serv h1 {
   color: #3957ed;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv h1 {
+    font-size: 24px;
+  }
+}
+.prin-serv img {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv img {
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 }
 .prin-serv .categ {
   display: flex;
@@ -644,10 +656,22 @@ header > button {
   padding: 30px;
   margin-right: 20px;
 }
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-pro {
+    width: 360px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
 .prin-serv .categ .sec-pro h2 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-pro h2 {
+    font-size: 20px;
+  }
 }
 .prin-serv .categ .sec-pro p {
   color: #545563;
@@ -686,10 +710,22 @@ header > button {
   padding: 30px;
   margin-right: 20px;
 }
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-for {
+    width: 360px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+}
 .prin-serv .categ .sec-for h2 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-for h2 {
+    font-size: 20px;
+  }
 }
 .prin-serv .categ .sec-for p {
   color: #545563;
@@ -738,11 +774,17 @@ header > button {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 800px;
+  width: 60%;
   height: 400px;
   padding: 15px;
   border: 2px solid #3957ed;
   border-radius: 5px;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 800px) {
+  .prin-chat .sec-mess .inter-chat {
+    width: 90%;
+  }
 }
 .prin-chat .sec-mess .inter-chat .text-ent p {
   color: #545563;
@@ -775,7 +817,12 @@ header > button {
   margin-bottom: 10px;
 }
 .prin-chat .ent-chat form {
-  width: 800px;
+  width: 60%;
+}
+@media screen and (max-width: 800px) {
+  .prin-chat .ent-chat form {
+    width: 90%;
+  }
 }
 .prin-chat .ent-chat input {
   width: 100%;

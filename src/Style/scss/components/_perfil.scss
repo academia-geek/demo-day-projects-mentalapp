@@ -162,15 +162,16 @@
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 10px;
+  display: none;
+  // background-color: transparent;
+  // width: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: $secundary;
-  border-radius: 20px;
-  border: 2px solid #f1f2f3;
-}
+// ::-webkit-scrollbar-thumb {
+//   background-color: $secundary;
+//   border-radius: 20px;
+//   border: 2px solid #f1f2f3;
+// }
 
 // Cargando servidor
 
