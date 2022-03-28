@@ -14,6 +14,13 @@ export const perfilReducer = (state = initialState, action) => {
       return {
         publicaciones: [action.payload],
       };
+    case typesPost.delete:
+      return {
+        publicaciones: state.publicaciones.filter(
+          (emp) => emp.descripcion !== action.payload
+        ),
+      };
+
     default:
       return state;
   }
