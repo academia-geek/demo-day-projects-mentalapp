@@ -9,6 +9,11 @@ export const loginReducer = (state = {}, action) => {
             email: action.payload.email,
          };
 
+      case types.user:
+         return {
+            id: "user"
+         }
+
       case types.logout:
          return {};
 

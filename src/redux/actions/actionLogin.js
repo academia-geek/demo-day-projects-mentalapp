@@ -110,3 +110,14 @@ export const registroSync = (email, id, name) => {
       },
    };
 };
+
+// Usuario sin registro
+
+export const registroDefault = () => {
+   return {
+      type: types.user,
+      payload: {
+         id: "user"
+      }
+   }
+}

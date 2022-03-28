@@ -41,7 +41,7 @@ const Chat = () => {
     reset();
   };
 
-  let uid = usuario.id;
+  let uid = usuario.id
   let fecha = new Date();
 
   return (
