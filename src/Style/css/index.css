@@ -721,74 +721,71 @@ header > button {
 .prin-chat {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 85vh;
-  border-radius: 5px 5px 5px 0px;
-  padding: 30px;
-  margin-right: 20px;
+  justify-content: center;
 }
 .prin-chat h1 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
 }
-.prin-chat .inter-chat {
+.prin-chat .sec-mess {
   display: flex;
-  height: 60%;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.prin-chat .sec-mess .inter-chat {
+  display: flex;
   flex-direction: column;
   justify-content: end;
+  width: 800px;
+  height: 55vh;
+  padding: 15px;
+  border: 2px solid #3957ed;
+  border-radius: 5px;
+  overflow-y: scroll;
 }
-.prin-chat .inter-chat .text-ent p {
+.prin-chat .sec-mess .inter-chat .text-ent p {
   color: #545563;
   text-align: left;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-ent h5 {
+.prin-chat .sec-mess .inter-chat .text-ent h5 {
   color: #7ec9f5;
   text-align: left;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-sal p {
+.prin-chat .sec-mess .inter-chat .text-sal p {
   color: #545563;
   text-align: right;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-sal h5 {
-  color: #7ec9f5;
+.prin-chat .sec-mess .inter-chat .text-sal h5 {
+  color: #3957ed;
   text-align: right;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
 .prin-chat .ent-chat {
   display: flex;
-  align-content: center;
-  align-items: stretch;
   justify-content: center;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .prin-chat .ent-chat form {
-  width: 50%;
+  width: 800px;
 }
 .prin-chat .ent-chat input {
-  width: 95%;
+  width: 100%;
   border: 2px solid #3957ed;
   border-radius: 5px;
   height: 40px;
-  margin-top: 15px;
-  margin-bottom: 5px;
   padding-left: 10px;
   font-family: "Montserrat", sans-serif;
   color: #545563;
-}
-.prin-chat .ent-chat button {
-  cursor: pointer;
-  border: 0;
-  background-color: transparent;
-  margin-left: 10px;
 }
 
 .btn-chat {
@@ -807,6 +804,17 @@ header > button {
   color: white;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7ec9f5;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
 }
 
 .cntr-citas {
