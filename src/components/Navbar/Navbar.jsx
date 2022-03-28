@@ -56,7 +56,7 @@ const Navbar = ({isLoggedIn}) => {
             }
             { !isLoggedIn &&
                <div>
-                  <h4 onClick={() => redirect("/login")}>Iniciar sesión</h4>
+                  <button onClick={() => redirect("/login")}>Iniciar sesión</button>
                </div>
             }
          </nav>

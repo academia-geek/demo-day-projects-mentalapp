@@ -1,0 +1,45 @@
+@import '../base/variables';
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(2px);
+    .alerta{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: $white;
+        border: solid 1px $primary;
+        border-radius: 10px;
+        h6{
+            color: $primary;
+            font-family: $nunito;
+            margin: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button{
+            width: 90%;
+            max-width: 300px;
+            padding: 10px;
+            font-family: $nunito;
+            font-size: 16px;
+            font-weight: 600;
+            color: $white;
+            background-color: $primary;
+            border: none;
+            border-radius: 10px;
+            &:hover{
+                background-color: $secundary;
+            }
+        }
+    }    
+}
