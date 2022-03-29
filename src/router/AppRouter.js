@@ -22,6 +22,7 @@ export const AppRouter = () => {
 
    const [checking, setChecking] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(true);
+   const [modalHome, setModalHome] = useState(true);
    const dispatch = useDispatch();
 
    useEffect(() => {
@@ -72,7 +73,7 @@ export const AppRouter = () => {
                   </PublicRouter>
                }
             />
-            <Route path="/" element={<Inicio />} />
+            <Route path="/" element={<Inicio stateModal={[modalHome, setModalHome]} />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<ElegirTema />} />
