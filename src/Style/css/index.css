@@ -26,11 +26,12 @@
   width: 35px;
   height: 35px;
   margin: 15px 0;
-  border: solid 5px #545563;
+  border: solid 5px transparent;
   border-radius: 50%;
-  border-top: solid 5px #7ec9f5;
-  opacity: 50%;
-  animation: girar 1.5s linear infinite;
+  background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(45deg, #3957ed, #7ec9f5);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: girar 1s linear infinite;
 }
 
 @keyframes girar {
@@ -265,7 +266,7 @@
   gap: 5rem;
   font-family: "Nunito", sans-serif;
 }
-.cont-exp h1 {
+.cont-exp h2 {
   color: #3957ed;
 }
 .cont-exp .experiences {
@@ -295,6 +296,7 @@
 
 .sec-about {
   display: flex;
+  margin: 5rem 0 8rem 0;
 }
 .sec-about .sec-div {
   display: flex;
@@ -362,6 +364,104 @@
     width: 320px;
     margin-top: 35px;
     margin-left: 0px;
+  }
+}
+
+.bienvenida {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+}
+.bienvenida > div {
+  width: 40%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bienvenida > div > img {
+  width: 90%;
+  max-width: 500px;
+}
+.bienvenida > div > h3,
+.bienvenida > div > p {
+  width: 100%;
+  text-align: left;
+  margin: 20px 0;
+}
+.bienvenida > div > h3 {
+  font-size: 40px;
+  color: #3957ed;
+}
+.bienvenida > div p {
+  font-size: 17px;
+  color: #545563;
+}
+.bienvenida > div > div {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bienvenida > div > div > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.bienvenida > div > div > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
+}
+@media screen and (max-width: 1240px) {
+  .bienvenida > div > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bienvenida > div > div > button {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bienvenida {
+    flex-direction: column;
+  }
+  .bienvenida > div {
+    width: 100%;
+    align-items: center;
+  }
+  .bienvenida > div > img {
+    max-height: 50vh;
+  }
+  .bienvenida > div h3 {
+    font-size: 30px;
+    width: 80%;
+    text-align: center;
+  }
+  .bienvenida > div p {
+    width: 80%;
+    text-align: center;
+  }
+  .bienvenida > div > div {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .bienvenida > div > div > button {
+    min-width: 210px;
+    margin: 10px;
   }
 }
 
@@ -446,8 +546,11 @@ header > nav {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
 }
 header > nav > div {
+  border-top: solid 2px transparent;
   margin-left: 40px;
   padding: 10px 5px;
   height: 100%;
@@ -501,17 +604,21 @@ header > nav > div:hover h4 {
 header > nav > div:hover .desplegable {
   display: flex;
 }
-header > nav > div > button {
+header > nav > button {
   border: none;
+  width: 180px;
   background-color: #3957ed;
   padding: 10px 15px;
+  margin-left: 40px;
   font-family: "Nunito", sans-serif;
   border-radius: 8px;
   color: #FFFFFF;
   font-size: 15px;
 }
-header > nav > div > button:hover {
-  background-image: linear-gradient(#3957ed, #7ec9f5);
+header > nav > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  font-weight: 700;
+  cursor: pointer;
 }
 header > button {
   display: none;
@@ -593,6 +700,18 @@ header > button {
   }
   header.menu > nav > div:hover {
     border: none;
+  }
+  header.menu > nav > button {
+    background-color: #FFFFFF;
+    color: #3957ed;
+    font-weight: 700;
+    margin: 30px 0;
+    border: solid #FFFFFF 1px;
+  }
+  header.menu > nav > button:hover {
+    background-color: #3957ed;
+    color: #FFFFFF;
+    background-image: none;
   }
   header.menu > button {
     transform: rotate(-180deg);
@@ -1168,7 +1287,7 @@ header > button {
   justify-content: center;
   padding: 20px;
   background-color: #FFFFFF;
-  border: solid 1px #3957ed;
+  border: solid 1px #545563;
   border-radius: 10px;
 }
 .modal .alerta h6 {
@@ -1192,6 +1311,68 @@ header > button {
 }
 .modal .alerta button:hover {
   background-color: #7ec9f5;
+}
+.modal .disc-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: solid 1px #545563;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+}
+.modal .disc-home img {
+  width: 40px;
+  margin: 15px;
+}
+.modal .disc-home h6 {
+  color: #3957ed;
+  font-size: 20px;
+  margin: 15px 0;
+  text-align: center;
+  width: 90%;
+}
+.modal .disc-home p {
+  color: #545563;
+  margin: 15px 0;
+  text-align: center;
+  width: 90%;
+}
+.modal .disc-home > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  width: 100%;
+}
+.modal .disc-home > div button {
+  width: 95%;
+  max-width: 250px;
+  border: none;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-family: "Nunito", sans-serif;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 15px;
+  cursor: pointer;
+}
+.modal .disc-home > div button:first-child {
+  background-color: red;
+}
+.modal .disc-home > div button:first-child:hover {
+  opacity: 50%;
+}
+.modal .disc-home > div button:nth-child(2) {
+  background-color: #3957ed;
+}
+.modal .disc-home > div button:nth-child(2):hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
 }
 
 /*# sourceMappingURL=index.css.map */
