@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 import { logoutAsync } from "../../redux/actions/actionLogin";
 
-const Navbar = ({isLoggedIn}) => {
-
+const Navbar = ({ isLoggedIn }) => {
    const dispatch = useDispatch();
    const [showMenu, setShowMenu] = useState(false);
    const navigate = useNavigate();
@@ -29,7 +28,7 @@ const Navbar = ({isLoggedIn}) => {
 
    return (
       <header className={clase}>
-         <div onClick={() => redirect("/inicio")}>
+         <div onClick={() => redirect("/")}>
             <img src={iconLogo} alt="logo MentalApp" />
             <h1>MentalApp</h1>
          </div>
@@ -43,9 +42,9 @@ const Navbar = ({isLoggedIn}) => {
                </ul>
             </div>
             <div>
-               <h4>Sobre nosotros</h4>
+               <h4 onClick={() => redirect("#sobre-nosotros")}>Sobre nosotros</h4>
             </div>
-            { isLoggedIn &&
+            {isLoggedIn && (
                <div>
                   <h4 onClick={() => redirect("/perfil")}>Perfil</h4>
                   <ul className="desplegable perfil">
@@ -53,12 +52,8 @@ const Navbar = ({isLoggedIn}) => {
                      <li onClick={() => handleLogout()}>Cerrar sesión</li>
                   </ul>
                </div>
-            }
-            { !isLoggedIn &&
-               <div>
-                  <h4 onClick={() => redirect("/login")}>Iniciar sesión</h4>
-               </div>
-            }
+            )}
+            {!isLoggedIn && <button onClick={() => redirect("/login")}>Iniciar sesión</button>}
          </nav>
          <button onClick={() => setShowMenu(!showMenu)}>
             <img src={iconMenu} alt="menu icon" />

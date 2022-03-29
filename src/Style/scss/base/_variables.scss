@@ -3,8 +3,9 @@ $primary: #3957ed;
 $secundary: #7ec9f5;
 $grey: #545563;
 $white: #FFFFFF;
+$red: rgb(196, 38, 38);
 
-$degradado: linear-gradient($primary, $secundary);
+$degradado: linear-gradient(45deg, $primary, $secundary);
 
 //Fuentes
 $montserrat: 'Montserrat', sans-serif;

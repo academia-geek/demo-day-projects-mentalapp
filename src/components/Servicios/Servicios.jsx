@@ -21,6 +21,10 @@ const Servicios = () => {
     <>
       <div className="prin-serv">
         <h1>Elige el servicio que deseas usar</h1>
+        <img
+          src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1648575394/Demoday%20Logos/undraw_shared_goals_re_jvqd_lr8kdh.svg"
+          alt="services"
+        />
         <div className="categ">
           <div className="sec-pro">
             <h2>Contacto con un profesional</h2>
@@ -30,7 +34,7 @@ const Servicios = () => {
               de nuestro profesionales
             </p>
             <div>
-              <button  onClick={redChat}>Quiero hablar con alguien ahora</button>
+              <button onClick={redChat}>Quiero hablar con alguien ahora</button>
               <button onClick={redCitas}>Quiero que me contacten luego</button>
             </div>
           </div>

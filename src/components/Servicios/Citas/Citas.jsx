@@ -83,7 +83,7 @@ const Citas = () => {
   if(cargando){
     return(
       <div className='loader'>
-        <h3>Cargando citas...</h3>
+        <h3>Cargando agenda de citas...</h3>
       </div>
     )
   }
@@ -201,8 +201,13 @@ const Citas = () => {
           </div>
           <button >Agendar cita</button>
         </form>
-        <div className={alerta===""? "d-none" : "alerta"}>
-            <h6>{alerta}</h6>
+        <div className={alerta===""? "d-none" : "modal"}>
+          <div className='alerta'>
+              <h6>{alerta}</h6>
+              <button onClick={()=>setAlerta("")} className={alerta==="Agendando cita..."?"d-none" : ""}>
+                Aceptar
+              </button>
+          </div>
         </div>
     </main>
   )
