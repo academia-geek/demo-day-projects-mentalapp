@@ -389,8 +389,11 @@ header > nav {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
 }
 header > nav > div {
+  border-top: solid 2px #FFFFFF;
   margin-left: 40px;
   padding: 10px 5px;
   height: 100%;
@@ -446,6 +449,7 @@ header > nav > div:hover .desplegable {
 }
 header > nav > button {
   border: none;
+  width: 180px;
   background-color: #3957ed;
   padding: 10px 15px;
   margin-left: 40px;
