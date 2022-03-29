@@ -72,6 +72,28 @@
   align-items: center;
   gap: 1rem;
 }
+.foro--agregar .auth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.foro--agregar .noauth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+.foro--agregar .noauth button {
+  width: 90%;
+  margin: auto;
+  background-color: #3957ed;
+  color: white;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .foro--agregar .agregar {
   display: flex;
   align-items: center;
@@ -156,7 +178,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  align-items: flex-end;
   font-family: "Nunito", sans-serif;
 }
 .cont--tema .tema {
@@ -165,16 +186,32 @@
   gap: 1rem;
 }
 .cont--tema .tema--respuestas {
-  width: 90%;
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 2rem;
 }
 
 .respuestas--anadir {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+}
+.respuestas--anadir form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.respuestas--anadir form button {
+  height: 2rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .respuestas {
@@ -355,17 +392,19 @@ header > nav > div:hover h4 {
 header > nav > div:hover .desplegable {
   display: flex;
 }
-header > nav > div > button {
+header > nav > button {
   border: none;
   background-color: #3957ed;
   padding: 10px 15px;
+  margin-left: 40px;
   font-family: "Nunito", sans-serif;
   border-radius: 8px;
   color: #FFFFFF;
   font-size: 15px;
 }
-header > nav > div > button:hover {
+header > nav > button:hover {
   background-image: linear-gradient(#3957ed, #7ec9f5);
+  font-weight: 700;
 }
 header > button {
   display: none;
@@ -379,6 +418,18 @@ header > button {
   }
   header > nav {
     display: none;
+  }
+  header > nav > button {
+    background-color: #FFFFFF;
+    color: #3957ed;
+    font-weight: 700;
+    margin: 30px 0;
+    border: solid #FFFFFF 1px;
+  }
+  header > nav > button:hover {
+    background-color: #3957ed;
+    color: #FFFFFF;
+    background-image: none;
   }
   header > button {
     display: flex;

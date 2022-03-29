@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommentIcon from "@mui/icons-material/Comment";
 import AddIcon from "@mui/icons-material/Add";
 import { Button, TextField } from "@mui/material";
@@ -12,17 +12,12 @@ const Foro = () => {
 
    const { categorias } = useSelector((store) => store.categorias);
    const { temas } = useSelector((store) => store.foro);
+   const user = useSelector((store) => store.user);
    const { categoria } = useParams();
-
-   // const hola = () => {
-   //    if (temas === undefined) {
-   //       return <h2>Cargando</h2>;
-   //    }
-   // };
 
    const temasFiltered = temas.filter((t) => t.categoria === categoria);
 
-   console.log(temasFiltered);
+   console.log(Object.keys(user).length);
 
    const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
 
@@ -30,6 +25,9 @@ const Foro = () => {
 
    const [agregarTema, setAgregarTema] = useState("agregar");
    const [ocultarTema, setOcultarTema] = useState("hidden");
+
+   const [auth, setAuth] = useState("hidden");
+   const [noauth, setNoauth] = useState("hidden");
 
    const mostrar = () => {
       setAgregarTema("hidden");
@@ -50,6 +48,7 @@ const Foro = () => {
          const { title, content } = data;
 
          const nuevoTema = {
+            usuario: user.name,
             codigo: Date.now(),
             nombre: title,
             descripcion: content,
@@ -65,14 +64,24 @@ const Foro = () => {
       },
    });
 
-   // useEffect(() => {
-   //    dispatch(listarCategoriasAsyn());
-   //    dispatch(listarTemaAsyn());
-   //    // eslint-disable-next-line react-hooks/exhaustive-deps
-   // }, []);
+   useEffect(() => {
+      if (Object.keys(user).length !== 0) {
+         setAuth("auth");
+         setNoauth("hidden");
+      } else {
+         setAuth("hidden");
+         setNoauth("noauth");
+      }
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    if (categoriaSelected === undefined) {
-      return <h2>Cargando...</h2>;
+      return (
+         <div className="loader">
+            <h2>Cargando foro...</h2>
+         </div>
+      );
    }
 
    return (
@@ -104,12 +113,12 @@ const Foro = () => {
                         <div className="card--info">
                            <h2>{t.nombre}</h2>
                            <span>
-                              Escrito por: <b>Anónimo</b>
+                              Escrito por: <b>{t.usuario}</b>
                            </span>
                         </div>
                         <div className="card--comment">
                            <CommentIcon />
-                           <span>10 comentarios</span>
+                           <span>{Object.keys(t.comentarios).length} comentarios</span>
                         </div>
                      </Link>
                   ))}
@@ -117,34 +126,42 @@ const Foro = () => {
             </div>
 
             <div className="foro--agregar">
-               <button className={agregarTema} onClick={mostrar}>
-                  <AddIcon />
-                  Agregar tema
-               </button>
-
-               <div className={ocultarTema}>
-                  <button className="regresar" onClick={ocultar}>
-                     Cancelar
+               <div className={auth}>
+                  <button className={agregarTema} onClick={mostrar}>
+                     <AddIcon />
+                     Agregar tema
                   </button>
 
-                  <form onSubmit={formik.handleSubmit}>
-                     <TextField
-                        label="Titulo"
-                        variant="outlined"
-                        name="title"
-                        onChange={formik.handleChange}
-                     />
-                     <TextField
-                        label="Contenido"
-                        multiline
-                        rows={15}
-                        name="content"
-                        onChange={formik.handleChange}
-                     />
-                     <Button type="submit" variant="contained" color="success">
-                        Enviar
-                     </Button>
-                  </form>
+                  <div className={ocultarTema}>
+                     <button className="regresar" onClick={ocultar}>
+                        Cancelar
+                     </button>
+
+                     <form onSubmit={formik.handleSubmit}>
+                        <TextField
+                           label="Titulo"
+                           variant="outlined"
+                           name="title"
+                           onChange={formik.handleChange}
+                        />
+                        <TextField
+                           label="Contenido"
+                           multiline
+                           rows={15}
+                           name="content"
+                           onChange={formik.handleChange}
+                        />
+                        <Button type="submit" variant="contained" color="success">
+                           Enviar
+                        </Button>
+                     </form>
+                  </div>
+               </div>
+               <div className={noauth}>
+                  <h3>Inicia sesión para aportar a esta conversación.</h3>
+                  <Link to="/login">
+                     <button>Inicia sesión</button>
+                  </Link>
                </div>
             </div>
          </div>

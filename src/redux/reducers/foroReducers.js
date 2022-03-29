@@ -32,6 +32,11 @@ export const foroReducer = (state = initialStateTemas, action) => {
             temas: [...action.payload],
          };
 
+      case typesForo.editarTema:
+         return {
+            ...state,
+         };
+
       default:
          return state;
    }
