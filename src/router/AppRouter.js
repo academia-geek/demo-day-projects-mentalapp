@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "../components/Login/Login";
 import Navbar from "../components/Navbar/Navbar";
 import FooterChat from "../components/Servicios/Chat/FooterChat";
@@ -19,6 +19,7 @@ import { listarCategoriasAsyn, listarTemaAsyn } from "../redux/actions/actionsFo
 import { loginSincrono } from "../../src/redux/actions/actionLogin";
 
 export const AppRouter = () => {
+
    const [checking, setChecking] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(true);
    const dispatch = useDispatch();
@@ -78,6 +79,7 @@ export const AppRouter = () => {
             <Route path="/foro/:categoria" element={<Foro />} />
             <Route path="/foro/:categoria/:codigo" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path='*' element={<Navigate to="/"/>} />
          </Routes>
          <FooterChat />
       </BrowserRouter>
