@@ -4,7 +4,7 @@
 
 .cont-exp {
    width: 80%;
-   margin: 3rem auto;
+   margin: 3rem auto 5rem auto;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -33,12 +33,6 @@
             width: 4rem;
             border-radius: 100%;
             margin-top: -15%;
-         }
-
-         p {
-            color: $grey;
-            font-style: italic;
-            font-size: 0.9rem;
          }
       }
    }

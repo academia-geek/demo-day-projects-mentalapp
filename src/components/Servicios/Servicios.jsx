@@ -22,7 +22,7 @@ const Servicios = () => {
       <div className="prin-serv">
         <h1>Elige el servicio que deseas usar</h1>
         <img
-          src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1648499001/Demoday%20Logos/undraw_shared_goals_re_jvqd_f1r9yn.svg"
+          src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1648575394/Demoday%20Logos/undraw_shared_goals_re_jvqd_lr8kdh.svg"
           alt="services"
         />
         <div className="categ">

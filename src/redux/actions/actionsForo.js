@@ -1,13 +1,4 @@
-import {
-   addDoc,
-   collection,
-   doc,
-   getDocs,
-   orderBy,
-   query,
-   updateDoc,
-   where,
-} from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { typesForo } from "../types/types";
 

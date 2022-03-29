@@ -4,6 +4,37 @@
    display: none;
 }
 
+.main-elegir {
+   display: flex;
+   margin: 0;
+
+   img {
+      width: 25rem;
+   }
+}
+
+.elegir-tema {
+   font-size: 1rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.8rem;
+   padding: 2rem;
+
+   &:hover {
+      transform: scale(1.02);
+   }
+
+   h4 {
+      color: $primary;
+   }
+
+   p {
+      font-size: 0.85rem;
+      color: $grey;
+   }
+}
+
 .cont--foro {
    width: 85%;
    margin: 2rem auto;
@@ -218,20 +249,22 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 3rem;
+   gap: 2rem;
    font-family: "Montserrat", sans-serif;
 }
 
 .categoria {
    width: 70%;
-   height: 5rem;
+   height: 7rem;
    margin: auto;
    display: flex;
    justify-content: center;
    align-items: center;
    border: 1px solid lightgray;
+   border-radius: 8px;
    font-size: 1.5rem;
    font-weight: 700;
    text-decoration: none;
    color: black;
+   text-align: center;
 }
