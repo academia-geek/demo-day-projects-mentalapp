@@ -26,11 +26,12 @@
   width: 35px;
   height: 35px;
   margin: 15px 0;
-  border: solid 5px #545563;
+  border: solid 5px transparent;
   border-radius: 50%;
-  border-top: solid 5px #7ec9f5;
-  opacity: 50%;
-  animation: girar 1.5s linear infinite;
+  background-image: linear-gradient(#fafafa, #fafafa), linear-gradient(45deg, #3957ed, #7ec9f5);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: girar 1s linear infinite;
 }
 
 @keyframes girar {
