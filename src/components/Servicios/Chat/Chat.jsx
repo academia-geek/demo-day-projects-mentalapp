@@ -25,7 +25,6 @@ const Chat = () => {
     return unsub;
   }, []);
 
-  // const mensaje = useSelector((store) => store.mensajes.mensajes);
   const usuario = useSelector((store) => store.user);
 
   // Agregar mensaje al chat
@@ -49,23 +48,23 @@ const Chat = () => {
     <>
       <div className="prin-chat">
         <h1>Chat con un profesional</h1>
-
-        <div className="inter-chat">
-          {mensajes.map((e, index) =>
-            e.uid === usuario.id ? (
-              <div className="text-sal" key={index}>
-                <p>{e.texto}</p>
-                <h5>Usuario</h5>
-              </div>
-            ) : (
-              <div className="text-ent" key={index}>
-                <p>{e.texto}</p>
-                <h5>Profesional</h5>
-              </div>
-            )
-          )}
+        <div className="sec-mess">
+          <div className="inter-chat">
+            {mensajes.map((e, index) =>
+              e.uid === usuario.id ? (
+                <div className="text-sal" key={index}>
+                  <p>{e.texto}</p>
+                  <h5>Usuario</h5>
+                </div>
+              ) : (
+                <div className="text-ent" key={index}>
+                  <p>{e.texto}</p>
+                  <h5>Profesional</h5>
+                </div>
+              )
+            )}
+          </div>
         </div>
-
         <div className="ent-chat">
           <form onSubmit={handleMessage}>
             <input

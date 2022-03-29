@@ -293,6 +293,78 @@
   font-size: 0.9rem;
 }
 
+.sec-about {
+  display: flex;
+}
+.sec-about .sec-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.sec-about .sec-div .sec-text {
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .sec-about .sec-div .sec-text {
+    width: 100%;
+    align-content: center;
+  }
+}
+.sec-about .sec-div .sec-text h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding-left: 150px;
+  font-family: "Nunito", sans-serif;
+  color: #3957ed;
+}
+@media screen and (max-width: 800px) {
+  .sec-about .sec-div .sec-text h1 {
+    text-align: center;
+    padding-left: 0px;
+  }
+}
+.sec-about .sec-div .sec-text p {
+  width: 90%;
+  padding-left: 150px;
+  color: #545563;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .sec-about .sec-div .sec-text p {
+    width: 80%;
+    padding-left: 0px;
+    text-align: center;
+  }
+}
+.sec-about .sec-div .sec-image {
+  width: 50%;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .sec-about .sec-div .sec-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+.sec-about .sec-div .sec-image img {
+  width: 420px;
+  margin-left: 100px;
+  align-self: center;
+}
+@media screen and (max-width: 800px) {
+  .sec-about .sec-div .sec-image img {
+    width: 320px;
+    margin-top: 35px;
+    margin-left: 0px;
+  }
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;
@@ -580,6 +652,12 @@ header > button {
   margin-right: 20px;
   overflow-y: scroll;
 }
+@media screen and (max-width: 800px) {
+  .prin-prof .main-prof .main-data {
+    border-left: 0;
+    margin-right: 0px;
+  }
+}
 .prin-prof .main-prof .main-data h2 {
   text-align: center;
   margin-bottom: 10px;
@@ -635,6 +713,12 @@ header > button {
   margin-right: 20px;
   border-left: 2px solid #3957ed;
 }
+@media screen and (max-width: 800px) {
+  .prin-prof .main-prof .new-post {
+    border-left: 0;
+    margin-right: 0px;
+  }
+}
 .prin-prof .main-prof .new-post p {
   margin-top: 10px;
   margin-bottom: 15px;
@@ -681,14 +765,7 @@ header > button {
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #7ec9f5;
-  border-radius: 20px;
-  border: 2px solid #f1f2f3;
+  display: none;
 }
 
 .checking {
@@ -709,9 +786,29 @@ header > button {
 }
 .prin-serv h1 {
   color: #3957ed;
+  font-size: 24px;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv h1 {
+    font-size: 18px;
+  }
+}
+.prin-serv img {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv img {
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 }
 .prin-serv .categ {
   display: flex;
@@ -730,10 +827,22 @@ header > button {
   padding: 30px;
   margin-right: 20px;
 }
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-pro {
+    width: 360px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
 .prin-serv .categ .sec-pro h2 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-pro h2 {
+    font-size: 20px;
+  }
 }
 .prin-serv .categ .sec-pro p {
   color: #545563;
@@ -772,10 +881,22 @@ header > button {
   padding: 30px;
   margin-right: 20px;
 }
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-for {
+    width: 360px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+}
 .prin-serv .categ .sec-for h2 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .prin-serv .categ .sec-for h2 {
+    font-size: 20px;
+  }
 }
 .prin-serv .categ .sec-for p {
   color: #545563;
@@ -807,44 +928,55 @@ header > button {
 .prin-chat {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 85vh;
-  border-radius: 5px 5px 5px 0px;
-  padding: 30px;
-  margin-right: 20px;
+  justify-content: center;
 }
 .prin-chat h1 {
   color: #3957ed;
   text-align: center;
   font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
 }
-.prin-chat .inter-chat {
+.prin-chat .sec-mess {
   display: flex;
-  height: 60%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
 }
-.prin-chat .inter-chat .text-ent p {
+.prin-chat .sec-mess .inter-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 60%;
+  height: 400px;
+  padding: 15px;
+  border: 2px solid #3957ed;
+  border-radius: 5px;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 800px) {
+  .prin-chat .sec-mess .inter-chat {
+    width: 90%;
+  }
+}
+.prin-chat .sec-mess .inter-chat .text-ent p {
   color: #545563;
   text-align: left;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-ent h5 {
+.prin-chat .sec-mess .inter-chat .text-ent h5 {
   color: #7ec9f5;
   text-align: left;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-sal p {
+.prin-chat .sec-mess .inter-chat .text-sal p {
   color: #545563;
   text-align: right;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
-.prin-chat .inter-chat .text-sal h5 {
-  color: #7ec9f5;
+.prin-chat .sec-mess .inter-chat .text-sal h5 {
+  color: #3957ed;
   text-align: right;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
@@ -852,20 +984,24 @@ header > button {
 .prin-chat .ent-chat {
   display: flex;
   justify-content: center;
-  align-content: end;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .prin-chat .ent-chat form {
-  width: 80%;
+  width: 60%;
+}
+@media screen and (max-width: 800px) {
+  .prin-chat .ent-chat form {
+    width: 90%;
+  }
 }
 .prin-chat .ent-chat input {
   width: 100%;
   border: 2px solid #3957ed;
   border-radius: 5px;
-  height: 30px;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  height: 40px;
   padding-left: 10px;
+  font-family: "Montserrat", sans-serif;
   color: #545563;
 }
 
