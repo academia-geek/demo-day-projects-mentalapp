@@ -34,12 +34,6 @@
             border-radius: 100%;
             margin-top: -15%;
          }
-
-         p {
-            color: $grey;
-            font-style: italic;
-            font-size: 0.9rem;
-         }
       }
    }
 }
@@ -105,7 +99,6 @@
       }
    }
 }
-@import "../base/variables";
 
 .bienvenida {
    display: flex;
