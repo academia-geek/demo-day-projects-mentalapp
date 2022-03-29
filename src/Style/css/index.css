@@ -256,6 +256,58 @@
   color: black;
 }
 
+.bienvenida {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+}
+.bienvenida > div {
+  width: 40%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bienvenida > div > img {
+  width: 90%;
+  max-width: 500px;
+}
+.bienvenida > div > h3, .bienvenida > div > p {
+  width: 100%;
+  text-align: left;
+  margin: 20px 0;
+}
+.bienvenida > div > h3 {
+  font-size: 40px;
+  color: #3957ed;
+}
+.bienvenida > div > div {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bienvenida > div > div > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.bienvenida > div > div > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;
@@ -403,7 +455,7 @@ header > nav > button {
   font-size: 15px;
 }
 header > nav > button:hover {
-  background-image: linear-gradient(#3957ed, #7ec9f5);
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
   font-weight: 700;
 }
 header > button {
