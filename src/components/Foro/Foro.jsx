@@ -60,7 +60,7 @@ const Foro = () => {
 
          dispatch(agregarTemaAsyn(nuevoTema));
 
-         formik.handleReset();
+         formik.resetForm();
       },
    });
 

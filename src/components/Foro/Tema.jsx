@@ -68,7 +68,9 @@ const Tema = () => {
                      name="comment"
                      onChange={formik.handleChange}
                   />
-                  <button type="submit">Enviar</button>
+                  <button type="submit" onClick={() => formik.handleReset}>
+                     Enviar
+                  </button>
                </form>
             </div>
 
