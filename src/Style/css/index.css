@@ -1188,7 +1188,7 @@ header > button {
   cursor: pointer;
 }
 .modal .disc-home > div button:first-child {
-  background-color: red;
+  background-color: #c42626;
 }
 .modal .disc-home > div button:first-child:hover {
   opacity: 50%;
