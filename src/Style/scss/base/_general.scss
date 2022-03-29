@@ -32,7 +32,7 @@
       margin: 15px 0;
       border: solid 5px transparent;
       border-radius: 50%;
-      background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 98%)), $degradado;
+      background-image: linear-gradient($white, $white), $degradado;
       background-origin: border-box;
       background-clip:content-box, border-box;
       animation: girar 1s linear infinite;
