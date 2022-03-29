@@ -48,7 +48,7 @@
         align-items: center;
         justify-content: center;
         width: 90%;
-        max-width: 550px;
+        max-width: 600px;
         padding: 20px;
         background-color: $white;
         border: solid 1px $grey;
@@ -60,7 +60,7 @@
         }
         h6{
             color: $primary;
-            font-size: 18px;
+            font-size: 20px;
             margin: 15px 0;
             text-align: center;
             width: 90%;
@@ -76,6 +76,32 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin: 15px 0;
+            width: 100%;
+            button{
+                width: 95%;
+                max-width: 250px;
+                border: none;
+                padding: 15px;
+                margin-bottom: 15px;
+                font-family: $nunito;
+                border-radius: 8px;
+                color: $white;
+                font-size: 15px;
+                cursor: pointer;
+                &:first-child{
+                    background-color: $red;
+                    &:hover{
+                        opacity: 50%;
+                    }
+                }
+                &:nth-child(2){
+                    background-color: $primary;
+                    &:hover{
+                        background-image: $degradado;
+                    }
+                }
+            }
         }
     }    
 }
