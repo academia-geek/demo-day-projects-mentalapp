@@ -16,7 +16,7 @@ import Tema from "../components/Foro/Tema";
 import ElegirTema from "../components/Foro/ElegirTema";
 import { useDispatch } from "react-redux";
 import { listarCategoriasAsyn, listarTemaAsyn } from "../redux/actions/actionsForo";
-import { loginSincrono } from "../../src/redux/actions/actionLogin";
+import { loginSincrono, registroDefault } from "../../src/redux/actions/actionLogin";
 
 export const AppRouter = () => {
 
@@ -40,6 +40,7 @@ export const AppRouter = () => {
 
       dispatch(listarCategoriasAsyn());
       dispatch(listarTemaAsyn());
+      dispatch(registroDefault())
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [dispatch]);

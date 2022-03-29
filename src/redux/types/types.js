@@ -2,6 +2,7 @@ export const types = {
    login: "login",
    logout: "logout",
    register: "register",
+   user: "user"
 };
 
 export const typesForo = {
