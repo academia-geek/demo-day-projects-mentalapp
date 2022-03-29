@@ -262,6 +262,7 @@
   align-items: center;
   justify-content: center;
   font-family: "Nunito", sans-serif;
+  width: 100%;
 }
 .bienvenida > div {
   width: 40%;
@@ -283,6 +284,10 @@
 .bienvenida > div > h3 {
   font-size: 40px;
   color: #3957ed;
+}
+.bienvenida > div p {
+  font-size: 17px;
+  color: #545563;
 }
 .bienvenida > div > div {
   margin: 10px 0;
@@ -306,6 +311,45 @@
 }
 .bienvenida > div > div > button:hover {
   background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+}
+@media screen and (max-width: 1240px) {
+  .bienvenida > div > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bienvenida > div > div > button {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bienvenida {
+    flex-direction: column;
+  }
+  .bienvenida > div {
+    width: 100%;
+    align-items: center;
+  }
+  .bienvenida > div > img {
+    max-height: 50vh;
+  }
+  .bienvenida > div h3 {
+    font-size: 30px;
+    width: 80%;
+    text-align: center;
+  }
+  .bienvenida > div p {
+    width: 80%;
+    text-align: center;
+  }
+  .bienvenida > div > div {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .bienvenida > div > div > button {
+    min-width: 210px;
+    margin: 10px;
+  }
 }
 
 .login-container {
