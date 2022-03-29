@@ -437,7 +437,7 @@ header > nav {
   font-size: 16px;
 }
 header > nav > div {
-  border-top: solid 2px #FFFFFF;
+  border-top: solid 2px transparent;
   margin-left: 40px;
   padding: 10px 5px;
   height: 100%;
@@ -520,18 +520,6 @@ header > button {
   header > nav {
     display: none;
   }
-  header > nav > button {
-    background-color: #FFFFFF;
-    color: #3957ed;
-    font-weight: 700;
-    margin: 30px 0;
-    border: solid #FFFFFF 1px;
-  }
-  header > nav > button:hover {
-    background-color: #3957ed;
-    color: #FFFFFF;
-    background-image: none;
-  }
   header > button {
     display: flex;
     flex-direction: column;
@@ -599,6 +587,18 @@ header > button {
   }
   header.menu > nav > div:hover {
     border: none;
+  }
+  header.menu > nav > button {
+    background-color: #FFFFFF;
+    color: #3957ed;
+    font-weight: 700;
+    margin: 30px 0;
+    border: solid #FFFFFF 1px;
+  }
+  header.menu > nav > button:hover {
+    background-color: #3957ed;
+    color: #FFFFFF;
+    background-image: none;
   }
   header.menu > button {
     transform: rotate(-180deg);

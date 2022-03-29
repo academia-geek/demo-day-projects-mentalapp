@@ -35,7 +35,7 @@ header{
         font-family: $nunito;
         font-size: 16px;
         >div{
-            border-top: solid 2px $white;
+            border-top: solid 2px transparent;
             margin-left: 40px;
             padding: 10px 5px;
             height: 100%;
@@ -118,18 +118,6 @@ header{
         }
         >nav{
             display: none;
-            >button{
-                background-color: $white;
-                color: $primary;
-                font-weight: 700;
-                margin: 30px 0;
-                border: solid $white 1px;
-                &:hover{
-                    background-color: $primary;
-                    color: $white;
-                    background-image: none;
-                }
-            }
         }
         >button{
             display: flex;
@@ -195,6 +183,18 @@ header{
                     }
                     &:hover{
                         border: none;
+                    }
+                }
+                >button{
+                    background-color: $white;
+                    color: $primary;
+                    font-weight: 700;
+                    margin: 30px 0;
+                    border: solid $white 1px;
+                    &:hover{
+                        background-color: $primary;
+                        color: $white;
+                        background-image: none;
                     }
                 }
             }
