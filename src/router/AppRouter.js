@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "../components/Login/Login";
 import Navbar from "../components/Navbar/Navbar";
 import FooterChat from "../components/Servicios/Chat/FooterChat";
@@ -19,8 +19,10 @@ import { listarCategoriasAsyn, listarTemaAsyn } from "../redux/actions/actionsFo
 import { loginSincrono, registroDefault } from "../../src/redux/actions/actionLogin";
 
 export const AppRouter = () => {
+
    const [checking, setChecking] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(true);
+   const [modalHome, setModalHome] = useState(true);
    const dispatch = useDispatch();
 
    useEffect(() => {
@@ -72,13 +74,14 @@ export const AppRouter = () => {
                   </PublicRouter>
                }
             />
-            <Route path="/" element={<Inicio />} />
+            <Route path="/" element={<Inicio stateModal={[modalHome, setModalHome]} />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<ElegirTema />} />
             <Route path="/foro/:categoria" element={<Foro />} />
             <Route path="/foro/:categoria/:codigo" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path='*' element={<Navigate to="/"/>} />
          </Routes>
          <FooterChat />
       </BrowserRouter>

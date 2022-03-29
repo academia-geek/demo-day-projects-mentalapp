@@ -29,7 +29,7 @@ const Navbar = ({isLoggedIn}) => {
 
    return (
       <header className={clase}>
-         <div onClick={() => redirect("/inicio")}>
+         <div onClick={() => redirect("/")}>
             <img src={iconLogo} alt="logo MentalApp" />
             <h1>MentalApp</h1>
          </div>
@@ -55,9 +55,7 @@ const Navbar = ({isLoggedIn}) => {
                </div>
             }
             { !isLoggedIn &&
-               <div>
-                  <button onClick={() => redirect("/login")}>Iniciar sesión</button>
-               </div>
+               <button onClick={() => redirect("/login")}>Iniciar sesión</button>
             }
          </nav>
          <button onClick={() => setShowMenu(!showMenu)}>
