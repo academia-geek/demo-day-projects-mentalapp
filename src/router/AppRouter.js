@@ -72,7 +72,7 @@ export const AppRouter = () => {
                   </PublicRouter>
                }
             />
-            <Route path="/inicio" element={<Inicio />} />
+            <Route path="/" element={<Inicio />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<ElegirTema />} />

@@ -72,6 +72,28 @@
   align-items: center;
   gap: 1rem;
 }
+.foro--agregar .auth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.foro--agregar .noauth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+.foro--agregar .noauth button {
+  width: 90%;
+  margin: auto;
+  background-color: #3957ed;
+  color: white;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .foro--agregar .agregar {
   display: flex;
   align-items: center;
@@ -156,7 +178,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  align-items: flex-end;
   font-family: "Nunito", sans-serif;
 }
 .cont--tema .tema {
@@ -165,16 +186,32 @@
   gap: 1rem;
 }
 .cont--tema .tema--respuestas {
-  width: 90%;
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 2rem;
 }
 
 .respuestas--anadir {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+}
+.respuestas--anadir form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.respuestas--anadir form button {
+  height: 2rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .respuestas {
@@ -289,6 +326,43 @@
     margin-top: 35px;
     margin-left: 0px;
   }
+}
+
+.cont-exp {
+  width: 80%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  font-family: "Nunito", sans-serif;
+}
+.cont-exp h1 {
+  color: #3957ed;
+}
+.cont-exp .experiences {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.cont-exp .experiences .exp {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.cont-exp .experiences .exp img {
+  width: 4rem;
+  border-radius: 100%;
+  margin-top: -15%;
+}
+.cont-exp .experiences .exp p {
+  color: #545563;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .login-container {
