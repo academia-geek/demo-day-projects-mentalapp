@@ -104,6 +104,18 @@
                         }
                     }
                 }
+                &.cntr-illust{
+                    width: auto;
+                    img{
+                        width: 300px;
+                        @media screen and (max-width:320px){
+                            width: 90%;
+                        }
+                    }
+                    @media screen and (max-width:1140px){
+                        width: 100%;
+                    }
+                }
                 @media screen and (max-width:400px){
                     width: 100%;
                 }

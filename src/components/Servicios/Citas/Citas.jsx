@@ -3,6 +3,7 @@ import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import {db} from '../../../firebase/firebaseConfig';
 import { useSelector } from 'react-redux';
 import { useForm } from '../../../hooks/useForm';
+import {illustracionCitas} from '../../../media/imagenes';
 
 const Citas = () => {
 
@@ -121,6 +122,9 @@ const Citas = () => {
         <h3>Cita con un profesional</h3>
         <form onSubmit={handleSubmit}>
           <div>
+            <div className='cntr-illust'>
+              <img src={illustracionCitas} alt='Ilustración citas'/>
+            </div>  
             <div className='cntr-profesionales'>
                 <h4>Escoge un profesional</h4>
                 <div>

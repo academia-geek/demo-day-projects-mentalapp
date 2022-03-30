@@ -12,3 +12,5 @@ export const menuIconLight =
 export const logoLight = "https://res.cloudinary.com/dbzo53yx4/image/upload/v1648045526/MentalApp/fire_acepvy.svg";
 
 export const illustracionHome = "https://res.cloudinary.com/dbzo53yx4/image/upload/v1648516132/MentalApp/illus-home_esexdg.svg";
+
+export const illustracionCitas = "https://res.cloudinary.com/dbzo53yx4/image/upload/v1648654464/MentalApp/illus-calendar_tqmcuz.svg";
