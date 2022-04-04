@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { db } from "../../../firebase/firebaseConfig";
 import { orderBy } from "firebase/firestore";
 import { useForm } from "../../../hooks/useForm";
-import {
-  addNewMessage,
-  listChatAsync,
-} from "../../../redux/actions/actionChat";
+import { addNewMessage } from "../../../redux/actions/actionChat";
 
 const Chat = () => {
   const dispatch = useDispatch();
@@ -28,10 +25,7 @@ const Chat = () => {
   const usuario = useSelector((store) => store.user);
 
   // Agregar mensaje al chat
-  const [formValues, handleInputChange, reset] = useForm({
-    text: "text",
-    uid: usuario.id,
-  });
+  const [formValues, handleInputChange, reset] = useForm();
 
   const { texto } = formValues;
 
