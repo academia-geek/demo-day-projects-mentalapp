@@ -19,7 +19,6 @@ import { listarCategoriasAsyn, listarTemaAsyn } from "../redux/actions/actionsFo
 import { loginSincrono, registroDefault } from "../../src/redux/actions/actionLogin";
 
 export const AppRouter = () => {
-
    const [checking, setChecking] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(true);
    const [modalHome, setModalHome] = useState(true);
@@ -40,7 +39,7 @@ export const AppRouter = () => {
 
       dispatch(listarCategoriasAsyn());
       dispatch(listarTemaAsyn());
-      dispatch(registroDefault())
+      dispatch(registroDefault());
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [dispatch]);
@@ -78,10 +77,10 @@ export const AppRouter = () => {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/citas" element={<Citas />} />
             <Route path="/foro" element={<ElegirTema />} />
-            <Route path="/foro/:categoria" element={<Foro />} />
+            <Route path="/foro/:categoria" element={<Foro isLoggedIn={isLoggedIn} />} />
             <Route path="/foro/:categoria/:codigo" element={<Tema />} />
             <Route path="/chat" element={<Chat />} />
-            <Route path='*' element={<Navigate to="/"/>} />
+            <Route path="*" element={<Navigate to="/" />} />
          </Routes>
          <FooterChat />
       </BrowserRouter>
