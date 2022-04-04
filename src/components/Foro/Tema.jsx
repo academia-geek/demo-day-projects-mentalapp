@@ -75,13 +75,13 @@ const Tema = () => {
             </div>
 
             <div className="respuestas">
-               <div className="respuesta--card">
+               {/* <div className="respuesta--card">
                   <span>Anónimo</span>
                   <span>
                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor nemo fuga quasi
                      fugit esse saepe facilis dolore laborum sequi! Autem.
                   </span>
-               </div>
+               </div> */}
                {temaSelected.comentarios.map((c, index) => (
                   <div className="respuesta--card" key={index}>
                      <span>{c.name}</span>

@@ -60,6 +60,9 @@ const Foro = () => {
 
          dispatch(agregarTemaAsyn(nuevoTema));
 
+         setOcultarTema("hidden");
+         setAgregarTema("agregar");
+
          formik.resetForm();
       },
    });
@@ -96,7 +99,7 @@ const Foro = () => {
                <h3>Últimos temas de conversación</h3>
 
                <div className="foro--cards">
-                  <div className="card">
+                  {/* <div className="card">
                      <div className="card--info">
                         <h2>Lorem ipsum</h2>
                         <span>
@@ -107,7 +110,7 @@ const Foro = () => {
                         <CommentIcon />
                         <span>10 comentarios</span>
                      </div>
-                  </div>
+                  </div> */}
                   {temasFiltered.map((t, index) => (
                      <Link to={"/foro/" + categoria + "/" + t.codigo} className="card" key={index}>
                         <div className="card--info">
