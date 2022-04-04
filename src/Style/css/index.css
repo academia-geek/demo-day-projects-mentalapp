@@ -286,6 +286,23 @@
   text-align: center;
 }
 
+.bienvenida > div > div > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.bienvenida > div > div > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
+}
+
 .cont-exp {
   width: 80%;
   margin: 3rem auto 5rem auto;
@@ -432,22 +449,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.bienvenida > div > div > button {
-  width: 90%;
-  max-width: 230px;
-  padding: 15px;
-  font-size: 15px;
-  font-family: "Nunito", sans-serif;
-  margin-right: 20px;
-  background-color: #3957ed;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 10px;
-}
-.bienvenida > div > div > button:hover {
-  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
-  cursor: pointer;
 }
 @media screen and (max-width: 1240px) {
   .bienvenida > div > div {
@@ -1166,6 +1167,23 @@ header > button {
   font-family: "Nunito", sans-serif;
 }
 
+.cntr-citas form > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.cntr-citas form > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
+}
+
 .cntr-citas {
   display: flex;
   flex-direction: column;
@@ -1293,20 +1311,21 @@ header > button {
     width: 100%;
   }
 }
-.cntr-citas form > button {
+.modal .alerta button {
   width: 90%;
-  max-width: 300px;
-  padding: 10px;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
   font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
+  margin-right: 20px;
   background-color: #3957ed;
+  color: #FFFFFF;
   border: none;
   border-radius: 10px;
 }
-.cntr-citas form > button:hover {
-  background-color: #7ec9f5;
+.modal .alerta button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
 }
 
 .modal {
@@ -1341,21 +1360,6 @@ header > button {
   margin: 15px;
   padding: 10px;
   font-size: 16px;
-}
-.modal .alerta button {
-  width: 90%;
-  max-width: 300px;
-  padding: 10px;
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
-  background-color: #3957ed;
-  border: none;
-  border-radius: 10px;
-}
-.modal .alerta button:hover {
-  background-color: #7ec9f5;
 }
 .modal .disc-home {
   display: flex;
