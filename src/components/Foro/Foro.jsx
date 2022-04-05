@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { agregarTemaAsyn } from "../../redux/actions/actionsForo";
 
-const Foro = () => {
+const Foro = ({ isLoggedIn }) => {
    const dispatch = useDispatch();
 
    const { categorias } = useSelector((store) => store.categorias);
@@ -68,7 +68,7 @@ const Foro = () => {
    });
 
    useEffect(() => {
-      if (Object.keys(user).length !== 0) {
+      if (isLoggedIn) {
          setAuth("auth");
          setNoauth("hidden");
       } else {
