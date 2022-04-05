@@ -1156,7 +1156,7 @@ header > button {
 .btn-chat {
   position: absolute;
   position: fixed;
-  bottom: 0;
+  bottom: 30px;
   right: 30px;
 }
 .btn-chat button {
@@ -1164,7 +1164,7 @@ header > button {
   width: 200px;
   height: 40px;
   border: 0;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 5px 5px;
   background-color: #c42626;
   color: white;
   font-size: 16px;
