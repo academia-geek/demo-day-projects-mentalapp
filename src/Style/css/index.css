@@ -1156,7 +1156,7 @@ header > button {
 .btn-chat {
   position: absolute;
   position: fixed;
-  bottom: 30px;
+  bottom: 20px;
   right: 30px;
 }
 .btn-chat button {
