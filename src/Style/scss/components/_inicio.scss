@@ -34,13 +34,16 @@
          align-items: center;
          text-align: center;
          color: $grey;
-
+         border-width: 3px;
+         border-style: solid;
+         border-image: $degradado 1;
+         
          img {
             width: 3rem;
             padding: 10px;
             border-radius: 100%;
             position: relative;
-            top: -1.5rem;
+            top: -2rem;
             background-image: $degradado;
          }
       }
