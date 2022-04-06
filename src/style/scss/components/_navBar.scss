@@ -1,0 +1,206 @@
+@import '../base/variables';
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 25px;
+    font-family: $montserrat;
+    background-color: $white;
+    margin-bottom: 30px;
+    >div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        cursor: pointer;
+        h1{
+            margin: 0 10px;
+            font-size: 25px;
+            color: $primary;
+        }
+        img{
+            width: 30px;
+        }
+    }
+    >nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: $nunito;
+        font-size: 16px;
+        >div{
+            border-top: solid 2px transparent;
+            margin-left: 40px;
+            padding: 10px 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            h4{
+                font-weight: 600;
+                color: $grey;
+                cursor: pointer;
+            }
+            ul.desplegable{
+                position: absolute;
+                top: 100%;
+                padding-top: 20px;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                transition: all 0.3s ease-in-out;
+                background-color: $white;
+                border-radius: 0 0 5px 5px;
+                &.servicios{
+                    left: 0;
+                    width: 270px;
+                }
+                &.perfil{
+                    right: 0;
+                    width: 130px;
+                    text-align: right;
+                }
+                li{
+                    text-decoration: none;
+                    list-style: none;
+                    color: $grey;
+                    cursor: pointer;
+                    padding: 0 10px 10px 10px;
+                    width: 100%;
+                    &:hover{
+                        font-weight: 600;
+                    }
+                }
+            }
+            &:hover{
+                border-top: solid 2px $secundary;
+                h4{
+                    color: $secundary;
+                }
+                .desplegable{
+                    display: flex;
+                }
+            }
+        }
+        >button{
+            border: none;
+            width: 180px;
+            background-color: $primary;
+            padding: 10px 15px;
+            margin-left: 40px;
+            font-family: $nunito;
+            border-radius: 8px;
+            color: $white;
+            font-size: 15px;
+            &:hover{
+                background-image: $degradado;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+    >button{
+        display: none;
+    }
+    @media screen and (max-width:800px){
+        >div{
+            margin-right: 50px;
+            h1{
+                font-size: 20px;
+            }
+        }
+        >nav{
+            display: none;
+        }
+        >button{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            img{
+                width: 35px;
+            }
+        }
+        &.menu{
+            background-color: $primary;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            >div{
+                flex-grow:0;
+                h1{
+                    color: $white;
+                }
+            }
+            >nav{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
+                margin-top: 50px;
+                >div{
+                    margin: 10px 0;
+                    padding: 5px 0;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    h4{
+                        color: $white;
+                        padding-top: 5px;
+                        border-top: solid 1px $white;
+                    }
+                    ul.desplegable, ul.servicios, ul.perfil{
+                        display: flex;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        background: none;
+                        width: auto;
+                        li{
+                            color: $white;
+                            text-align: right;
+                            padding: 5px 0;
+                        }
+                    }
+                    &:hover{
+                        border: none;
+                    }
+                }
+                >button{
+                    background-color: $white;
+                    color: $primary;
+                    font-weight: 700;
+                    margin: 30px 0;
+                    border: solid $white 1px;
+                    &:hover{
+                        background-color: $primary;
+                        color: $white;
+                        background-image: none;
+                    }
+                }
+            }
+            >button{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}

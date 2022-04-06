@@ -17,8 +17,6 @@ const Foro = ({ isLoggedIn }) => {
 
    const temasFiltered = temas.filter((t) => t.categoria === categoria);
 
-   console.log(Object.keys(user).length);
-
    const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
 
    //console.log(categoriaSelected);

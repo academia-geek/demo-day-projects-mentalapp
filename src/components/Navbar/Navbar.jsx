@@ -5,7 +5,6 @@ import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 import { logoutAsync } from "../../redux/actions/actionLogin";
 
 const Navbar = ({ isLoggedIn }) => {
-
    const dispatch = useDispatch();
    const [showMenu, setShowMenu] = useState(false);
    const navigate = useNavigate();
@@ -38,9 +37,7 @@ const Navbar = ({ isLoggedIn }) => {
                   <li onClick={() => redirect("/foro")}>Visitar foro</li>
                </ul>
             </div>
-            <div onClick={() => redirect("/#sobre-nosotros")}>
-               <h4>Sobre nosotros</h4>
-            </div>
+
             {isLoggedIn && (
                <div>
                   <h4 onClick={() => redirect("/perfil")}>Perfil</h4>

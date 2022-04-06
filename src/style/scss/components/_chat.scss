@@ -1,0 +1,101 @@
+@import "../base/variables";
+
+.prin-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    color: $primary;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 20px;
+  }
+  .sec-mess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .inter-chat {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 60%;
+      height: 400px;
+      padding: 15px;
+      border: 2px solid $primary;
+      border-radius: 5px;
+      overflow-y: hidden;
+      @media screen and (max-width:800px){
+        width: 90%;
+      }
+      .text-ent {
+        p {
+          color: $grey;
+          text-align: left;
+          font-size: 14px;
+          font-family: "Montserrat", sans-serif;
+        }
+        h5 {
+          color: $secundary;
+          text-align: left;
+          font-size: 14px;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+      .text-sal {
+        p {
+          color: $grey;
+          text-align: right;
+          font-size: 14px;
+          font-family: "Montserrat", sans-serif;
+        }
+        h5 {
+          color: $primary;
+          text-align: right;
+          font-size: 14px;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+    }
+  }
+  .ent-chat {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    form {
+      width: 60%;
+      @media screen and (max-width:800px){
+        width: 90%;
+      }
+    }
+    input {
+      width: 100%;
+      border: 2px solid $primary;
+      border-radius: 5px;
+      height: 40px;
+      padding-left: 10px;
+      font-family: "Montserrat", sans-serif;
+      color: $grey;
+    }
+  }
+}
+
+// Botón de chat
+
+.btn-chat {
+  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  button {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: $red;
+    color: white;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+  }
+}

@@ -1,0 +1,14 @@
+//Importaciones
+@use './base/general';
+@use './components/foro';
+@use './components/inicio';
+@use './components/login';
+@use './components/navBar';
+@use './components/perfil';
+@use './components/servicios';
+@use './components/chat';
+@use './components/citas';
+@use './components/modal';
+
+//Compilación
+// sass --watch src/style/scss/index.scss src/style/css/index.css

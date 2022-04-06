@@ -1,0 +1,195 @@
+@import "../base/variables";
+
+.prin-prof {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fff;
+  h1 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Nunito", sans-serif;
+  }
+  .main-prof {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .main-per {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      border-radius: 5px;
+      padding: 30px;
+      margin-right: 20px;
+      img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-family: "Nunito", sans-serif;
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+
+    .main-data {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 400px;
+      border-left: 2px solid $primary;
+      padding: 30px;
+      margin-right: 20px;
+      overflow-y: scroll;
+      @media screen and (max-width: 800px) {
+        border-left: 0;
+        margin-right: 0px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: "Nunito", sans-serif;
+        color: $primary;
+        border-bottom: 2px solid $secundary;
+        font-size: 18px;
+      }
+      p {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        text-align: left;
+        font-size: 12px;
+        border-bottom: 2px solid $secundary;
+        font-family: "Montserrat", sans-serif;
+      }
+      img {
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      .sec-act {
+        display: flex;
+        align-items: center;
+        img {
+          width: 40px;
+          border-radius: 50%;
+        }
+        h6 {
+          margin-left: 10px;
+          font-family: "Nunito", sans-serif;
+        }
+        button {
+          cursor: pointer;
+          border: 0;
+          border-radius: 5px;
+          width: 70px;
+          height: 20px;
+          margin-left: 130px;
+          right: 10px;
+          color: white;
+          font-family: "Nunito", sans-serif;
+          background-color: rgb(196, 38, 38);
+        }
+      }
+    }
+
+    .new-post {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      padding: 30px;
+      margin-right: 20px;
+      border-left: 2px solid $primary;
+      @media screen and (max-width: 800px) {
+        border-left: 0;
+        margin-right: 0px;
+      }
+      p {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        text-align: left;
+        font-size: 12px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: "Nunito", sans-serif;
+        color: $primary;
+        border-bottom: 2px solid $secundary;
+        font-size: 18px;
+      }
+      button {
+        cursor: pointer;
+        background: linear-gradient(
+          180deg,
+          rgba(126, 201, 245, 1) 0%,
+          rgba(57, 87, 237, 1) 100%
+        );
+        border: 0;
+        color: white;
+        height: 40px;
+        width: 40px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        border-radius: 50%;
+        font-size: 25px;
+        font-family: "Nunito", sans-serif;
+      }
+      > form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        textarea {
+          font-family: "Montserrat", sans-serif;
+          color: $grey;
+          border: 0;
+          padding: 10px;
+          border: 2px solid $secundary;
+          border-radius: 5px;
+          resize: none;
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+  // background-color: transparent;
+  // width: 10px;
+}
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: $secundary;
+//   border-radius: 20px;
+//   border: 2px solid #f1f2f3;
+// }
+
+// Cargando servidor
+
+.checking {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
