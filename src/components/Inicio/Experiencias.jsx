@@ -4,7 +4,7 @@ import { iconPersona } from "../../media/imagenes";
 const Experiencias = () => {
    return (
       <section className="cont-exp">
-         <h2>Experiencias de nuestros usuarios</h2>
+         <h2 style={{ textAlign: "center" }}>Experiencias de nuestros usuarios</h2>
          <div className="experiences">
             <div className="exp">
                <img src={iconPersona} alt="icono persona" />
