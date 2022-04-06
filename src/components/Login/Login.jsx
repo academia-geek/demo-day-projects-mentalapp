@@ -67,7 +67,7 @@ const Login = () => {
 
    return (
       <div className="login-container">
-         <div className="login" style={{ borderRight: "1px solid lightgray" }}>
+         <div className="login" >
             <h3 className="title">Inicia sesión en tu cuenta</h3>
             <form onSubmit={loginFormik.handleSubmit}>
                <TextField
