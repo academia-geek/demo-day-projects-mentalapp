@@ -1,4 +1,5 @@
 import React from "react";
+import { iconPersona } from "../../media/imagenes";
 
 const Experiencias = () => {
    return (
@@ -7,8 +8,8 @@ const Experiencias = () => {
          <div className="experiences">
             <div className="exp">
                <img
-                  src="https://res.cloudinary.com/dcane9asx/image/upload/v1646017915/images-sprint3-reto1/profile-2_otihpo.jpg"
-                  alt=""
+                  src={iconPersona}
+                  alt="icono persona"
                />
                <h3>Felipe Rodriguez</h3>
                <p>
@@ -19,8 +20,8 @@ const Experiencias = () => {
             </div>
             <div className="exp">
                <img
-                  src="https://res.cloudinary.com/dcane9asx/image/upload/v1646017915/images-sprint3-reto1/profile-2_otihpo.jpg"
-                  alt=""
+                  src={iconPersona}
+                  alt="icono persona"
                />
                <h3>Camilo Garzón</h3>
                <p>
@@ -31,8 +32,8 @@ const Experiencias = () => {
             </div>
             <div className="exp">
                <img
-                  src="https://res.cloudinary.com/dcane9asx/image/upload/v1646017915/images-sprint3-reto1/profile-2_otihpo.jpg"
-                  alt=""
+                  src={iconPersona}
+                  alt="icono persona"
                />
                <h3>Cristian Sandoval</h3>
                <p>

@@ -53,19 +53,31 @@ main {
 
 .main-elegir {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin: 0;
 }
 .main-elegir img {
-  width: 25rem;
+  width: 20rem;
+  padding: 20px;
+}
+@media all and (max-width: 850px) {
+  .main-elegir {
+    flex-direction: column;
+  }
+  .main-elegir img {
+    max-height: 300px;
+  }
 }
 
 .elegir-tema {
   font-size: 1rem;
+  padding: 2rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  padding: 2rem;
 }
 .elegir-tema:hover {
   transform: scale(1.02);
@@ -79,30 +91,54 @@ main {
 }
 
 .cont--foro {
-  width: 85%;
+  width: 100%;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   font-family: "Nunito", sans-serif;
 }
+@media all and (max-width: 850px) {
+  .cont--foro {
+    margin: 20px;
+  }
+}
 
+.foro--titulo {
+  padding: 20px 5%;
+}
 .foro--titulo h1 {
   color: #3957ed;
 }
 
 .foro {
   width: 100%;
-  display: grid;
-  grid-template-columns: 2.3fr 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 5%;
+}
+.foro > div {
+  width: 100%;
+}
+@media all and (max-width: 850px) {
+  .foro {
+    flex-direction: column-reverse;
+  }
+}
+.foro h3 {
+  margin: 20px 0;
 }
 
 .foro--agregar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+  max-width: 400px;
+  margin-bottom: 50px;
 }
 .foro--agregar .auth {
   width: 100%;
@@ -169,6 +205,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .card {
@@ -205,7 +242,8 @@ main {
 }
 
 .cont--tema {
-  width: 55%;
+  width: 100%;
+  max-width: 700px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -224,6 +262,11 @@ main {
   flex-direction: column;
   align-items: flex-end;
   gap: 2rem;
+}
+@media all and (max-width: 850px) {
+  .cont--tema {
+    padding: 20px 5%;
+  }
 }
 
 .respuestas--anadir {
@@ -264,7 +307,7 @@ main {
 }
 
 .cont-elegir {
-  width: 90%;
+  width: 100%;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
@@ -320,23 +363,33 @@ main {
   color: #3957ed;
 }
 .cont-exp .experiences {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .cont-exp .experiences .exp {
-  border: 1px solid lightgray;
+  width: 100%;
+  max-width: 300px;
   padding: 1rem;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   text-align: center;
+  color: #545563;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(45deg, #3957ed, #7ec9f5) 1;
 }
 .cont-exp .experiences .exp img {
-  width: 4rem;
+  width: 3rem;
+  padding: 10px;
   border-radius: 100%;
-  margin-top: -15%;
+  position: relative;
+  top: -2rem;
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
 }
 
 .sec-about {

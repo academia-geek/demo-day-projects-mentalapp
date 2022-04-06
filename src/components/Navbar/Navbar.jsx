@@ -20,7 +20,7 @@ const Navbar = ({ isLoggedIn }) => {
 
    const handleLogout = () => {
       dispatch(logoutAsync());
-      setShowMenu(false);
+      redirect("/login");
    };
 
    return (
