@@ -13,7 +13,9 @@ const Bienvenida = () => {
         </div>
         <div>
             <h3>¡Te damos la bienvenida a MentalApp!</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero provident saepe voluptatem omnis.</p>
+            <p>MentalApp te ofrece la posibilidad de hablar abiertamente sobre tu salud mental.
+              Además te ayuda a que desarrolles las habilidades necesarias para gestionar tus emociones.
+              Te invitamos a que visites y participes en nuestro foro, o también puedes hablar con un profesional agendando una cita o accediendo al chat de ayuda.</p>
             <div>
               <button onClick={()=>navigate("/foro")} >Visitar foro</button>
               <button onClick={()=>navigate("/chat")} >Hablar con un profesional</button>

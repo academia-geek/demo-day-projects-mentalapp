@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logo, logoLight, menuIcon, menuIconLight } from "../../media/imagenes";
 import { logoutAsync } from "../../redux/actions/actionLogin";
 
 const Navbar = ({ isLoggedIn }) => {
+
    const dispatch = useDispatch();
    const [showMenu, setShowMenu] = useState(false);
    const navigate = useNavigate();
@@ -22,10 +23,6 @@ const Navbar = ({ isLoggedIn }) => {
       setShowMenu(false);
    };
 
-   useEffect(() => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, []);
-
    return (
       <header className={clase}>
          <div onClick={() => redirect("/")}>
@@ -36,19 +33,18 @@ const Navbar = ({ isLoggedIn }) => {
             <div>
                <h4 onClick={() => redirect("/servicios")}>Servicios</h4>
                <ul className="desplegable servicios">
-                  <li>Chat con un profesional</li>
+                  <li onClick={() => redirect("/chat")}>Chat con un profesional</li>
                   <li onClick={() => redirect("/citas")}>Agendar una cita con un profesional</li>
                   <li onClick={() => redirect("/foro")}>Visitar foro</li>
                </ul>
             </div>
-            <div>
-               <h4 onClick={() => redirect("#sobre-nosotros")}>Sobre nosotros</h4>
+            <div onClick={() => redirect("/#sobre-nosotros")}>
+               <h4>Sobre nosotros</h4>
             </div>
             {isLoggedIn && (
                <div>
                   <h4 onClick={() => redirect("/perfil")}>Perfil</h4>
                   <ul className="desplegable perfil">
-                     <li>Editar perfil</li>
                      <li onClick={() => handleLogout()}>Cerrar sesión</li>
                   </ul>
                </div>

@@ -104,25 +104,25 @@
                         }
                     }
                 }
+                &.cntr-illust{
+                    width: auto;
+                    img{
+                        width: 300px;
+                        @media screen and (max-width:320px){
+                            width: 90%;
+                        }
+                    }
+                    @media screen and (max-width:1140px){
+                        width: 100%;
+                    }
+                }
                 @media screen and (max-width:400px){
                     width: 100%;
                 }
             }
         }
         >button{
-            width: 90%;
-            max-width: 300px;
-            padding: 10px;
-            font-family: $nunito;
-            font-size: 16px;
-            font-weight: 600;
-            color: $white;
-            background-color: $primary;
-            border: none;
-            border-radius: 10px;
-            &:hover{
-                background-color: $secundary;
-            }
+            @extend %boton-general;
         }
     }
 }

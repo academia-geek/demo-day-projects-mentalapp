@@ -2,7 +2,7 @@ import React from "react";
 
 const SobreNosotros = () => {
    return (
-      <div className="sec-about" id="sobre-nosotros">
+      <section className="sec-about" id="sobre-nosotros">
          <div className="sec-div">
             <div className="sec-text">
                <h1>Sobre nosotros</h1>
@@ -22,7 +22,7 @@ const SobreNosotros = () => {
                />
             </div>
          </div>
-      </div>
+      </section>
    );
 };
 
