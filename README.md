@@ -1,5 +1,5 @@
 <p style = 'text-align:center;'>
-<img src="https://res.cloudinary.com/dcane9asx/image/upload/v1649259288/7pqxT29m_4x_1_ltnlnl.png" alt="JuveYell" width="180px">
+<img src="https://res.cloudinary.com/dcane9asx/image/upload/v1649261924/JxDC6tZK_4x_gkf17b.png" alt="JuveYell" width="180px">
 </p>
 
 <h1 style="text-align: center">
