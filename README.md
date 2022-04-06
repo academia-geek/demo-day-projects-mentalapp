@@ -13,7 +13,7 @@ MentalApp
 
 #### Despliegue 📦
 
-[Link del despliegue]("https://mentalapp-ag.netlify.app/")
+[Link del despliegue](https://mentalapp-ag.netlify.app/)
 
 ---
 
