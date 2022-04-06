@@ -35,6 +35,6 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 
 #### Autores ✒️
 
--  **Felipe Rodriguez** - _Desarrollador frontend_ - [felipe22570](http://https://github.com/felipe22570 "felipe22570")
--  **Cristian Camilo Sandoval** - _Desarrollador frontend_ - [cristiancsandoval](http://https://github.com/cristiancsandoval "cristiancsandoval")
--  **Camilo Garzón** - _Desarrollador frontend_ - [CamiloGzn19](http://https://github.com/CamiloGzn19 "CamiloGzn19")
+-  **Felipe Rodriguez** - _Desarrollador frontend_ - [felipe22570](https://github.com/felipe22570 "felipe22570")
+-  **Cristian Camilo Sandoval** - _Desarrollador frontend_ - [cristiancsandoval](https://github.com/cristiancsandoval "cristiancsandoval")
+-  **Camilo Garzón** - _Desarrollador frontend_ - [CamiloGzn19](https://github.com/CamiloGzn19 "CamiloGzn19")
