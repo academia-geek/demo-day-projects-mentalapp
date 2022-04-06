@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -43,25 +42,41 @@
   display: none;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 .hidden {
   display: none;
 }
 
 .main-elegir {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin: 0;
 }
 .main-elegir img {
-  width: 25rem;
+  width: 20rem;
+  padding: 20px;
+}
+@media all and (max-width: 850px) {
+  .main-elegir {
+    flex-direction: column;
+  }
+  .main-elegir img {
+    max-height: 300px;
+  }
 }
 
 .elegir-tema {
   font-size: 1rem;
+  padding: 2rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  padding: 2rem;
 }
 .elegir-tema:hover {
   transform: scale(1.02);
@@ -75,30 +90,54 @@
 }
 
 .cont--foro {
-  width: 85%;
+  width: 100%;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   font-family: "Nunito", sans-serif;
 }
+@media all and (max-width: 850px) {
+  .cont--foro {
+    margin: 20px;
+  }
+}
 
+.foro--titulo {
+  padding: 20px 5%;
+}
 .foro--titulo h1 {
   color: #3957ed;
 }
 
 .foro {
   width: 100%;
-  display: grid;
-  grid-template-columns: 2.3fr 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 5%;
+}
+.foro > div {
+  width: 100%;
+}
+@media all and (max-width: 850px) {
+  .foro {
+    flex-direction: column-reverse;
+  }
+}
+.foro h3 {
+  margin: 20px 0;
 }
 
 .foro--agregar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+  max-width: 400px;
+  margin-bottom: 50px;
 }
 .foro--agregar .auth {
   width: 100%;
@@ -165,6 +204,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .card {
@@ -201,7 +241,8 @@
 }
 
 .cont--tema {
-  width: 55%;
+  width: 100%;
+  max-width: 700px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -220,6 +261,11 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 2rem;
+}
+@media all and (max-width: 850px) {
+  .cont--tema {
+    padding: 20px 5%;
+  }
 }
 
 .respuestas--anadir {
@@ -260,7 +306,7 @@
 }
 
 .cont-elegir {
-  width: 90%;
+  width: 100%;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
@@ -286,6 +332,23 @@
   text-align: center;
 }
 
+.bienvenida > div > div > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.bienvenida > div > div > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
+}
+
 .cont-exp {
   width: 80%;
   margin: 3rem auto 5rem auto;
@@ -299,23 +362,34 @@
   color: #3957ed;
 }
 .cont-exp .experiences {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .cont-exp .experiences .exp {
-  border: 1px solid lightgray;
+  width: 100%;
+  max-width: 300px;
   padding: 1rem;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   text-align: center;
+  gap: 1rem;
+  color: #545563;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(45deg, #3957ed, #7ec9f5) 1;
 }
 .cont-exp .experiences .exp img {
-  width: 4rem;
+  width: 3rem;
+  padding: 10px;
   border-radius: 100%;
-  margin-top: -15%;
+  position: relative;
+  top: -2rem;
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
 }
 
 .sec-about {
@@ -433,22 +507,6 @@
   align-items: center;
   justify-content: flex-start;
 }
-.bienvenida > div > div > button {
-  width: 90%;
-  max-width: 230px;
-  padding: 15px;
-  font-size: 15px;
-  font-family: "Nunito", sans-serif;
-  margin-right: 20px;
-  background-color: #3957ed;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 10px;
-}
-.bienvenida > div > div > button:hover {
-  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
-  cursor: pointer;
-}
 @media screen and (max-width: 1240px) {
   .bienvenida > div > div {
     flex-direction: column;
@@ -489,12 +547,43 @@
   }
 }
 
+.login-container button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.login-container button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
+}
+
 .login-container {
   width: 90%;
   margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-family: "Nunito", sans-serif;
+  color: #3957ed;
+}
+@media all and (max-width: 850px) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-container .login {
+    width: 100%;
+    margin-bottom: 50px;
+    border: none;
+  }
 }
 
 .title {
@@ -513,28 +602,38 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.login form Button {
-  margin-top: 0.5rem;
-  font-family: "Nunito", sans-serif;
+.login form > div {
+  width: 100%;
 }
 
 .login-socialmedia {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   gap: 0.5em;
 }
 .login-socialmedia button {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem;
-  gap: 0.5em;
-  cursor: pointer;
 }
 .login-socialmedia button img {
-  width: 1.2rem;
+  width: 1.7rem;
+  padding: 2px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+.login-socialmedia button span {
+  flex-grow: 1;
 }
 
 header {
@@ -1151,7 +1250,7 @@ header > button {
 .btn-chat {
   position: absolute;
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
   right: 30px;
 }
 .btn-chat button {
@@ -1159,11 +1258,28 @@ header > button {
   width: 200px;
   height: 40px;
   border: 0;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 5px 5px;
   background-color: #c42626;
   color: white;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
+}
+
+.cntr-citas form > button {
+  width: 90%;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  margin-right: 20px;
+  background-color: #3957ed;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+.cntr-citas form > button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
 }
 
 .cntr-citas {
@@ -1272,25 +1388,42 @@ header > button {
   border-radius: 8px;
   border: 3px solid #FFFFFF;
 }
+.cntr-citas form > div > div.cntr-illust {
+  width: auto;
+}
+.cntr-citas form > div > div.cntr-illust img {
+  width: 300px;
+}
+@media screen and (max-width: 320px) {
+  .cntr-citas form > div > div.cntr-illust img {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .cntr-citas form > div > div.cntr-illust {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 400px) {
   .cntr-citas form > div > div {
     width: 100%;
   }
 }
-.cntr-citas form > button {
+.modal .alerta button {
   width: 90%;
-  max-width: 300px;
-  padding: 10px;
+  max-width: 230px;
+  padding: 15px;
+  font-size: 15px;
   font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
+  margin-right: 20px;
   background-color: #3957ed;
+  color: #FFFFFF;
   border: none;
   border-radius: 10px;
 }
-.cntr-citas form > button:hover {
-  background-color: #7ec9f5;
+.modal .alerta button:hover {
+  background-image: linear-gradient(45deg, #3957ed, #7ec9f5);
+  cursor: pointer;
 }
 
 .modal {
@@ -1302,7 +1435,9 @@ header > button {
   height: 100vh;
   position: fixed;
   top: 0;
+  z-index: 100;
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .modal .alerta {
   display: flex;
@@ -1311,7 +1446,10 @@ header > button {
   justify-content: center;
   padding: 20px;
   background-color: #FFFFFF;
-  border: solid 1px #545563;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 .modal .alerta h6 {
@@ -1320,21 +1458,6 @@ header > button {
   margin: 15px;
   padding: 10px;
   font-size: 16px;
-}
-.modal .alerta button {
-  width: 90%;
-  max-width: 300px;
-  padding: 10px;
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
-  background-color: #3957ed;
-  border: none;
-  border-radius: 10px;
-}
-.modal .alerta button:hover {
-  background-color: #7ec9f5;
 }
 .modal .disc-home {
   display: flex;
@@ -1345,7 +1468,10 @@ header > button {
   max-width: 600px;
   padding: 20px;
   background-color: #FFFFFF;
-  border: solid 1px #545563;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   font-family: "Nunito", sans-serif;
 }

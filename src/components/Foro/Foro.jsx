@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { agregarTemaAsyn } from "../../redux/actions/actionsForo";
 
-const Foro = () => {
+const Foro = ({ isLoggedIn }) => {
    const dispatch = useDispatch();
 
    const { categorias } = useSelector((store) => store.categorias);
@@ -16,8 +16,6 @@ const Foro = () => {
    const { categoria } = useParams();
 
    const temasFiltered = temas.filter((t) => t.categoria === categoria);
-
-   console.log(Object.keys(user).length);
 
    const [categoriaSelected] = categorias.filter((u) => u.llave === categoria);
 
@@ -60,12 +58,15 @@ const Foro = () => {
 
          dispatch(agregarTemaAsyn(nuevoTema));
 
+         setOcultarTema("hidden");
+         setAgregarTema("agregar");
+
          formik.resetForm();
       },
    });
 
    useEffect(() => {
-      if (Object.keys(user).length !== 0) {
+      if (isLoggedIn) {
          setAuth("auth");
          setNoauth("hidden");
       } else {
@@ -96,7 +97,7 @@ const Foro = () => {
                <h3>Últimos temas de conversación</h3>
 
                <div className="foro--cards">
-                  <div className="card">
+                  {/* <div className="card">
                      <div className="card--info">
                         <h2>Lorem ipsum</h2>
                         <span>
@@ -107,7 +108,7 @@ const Foro = () => {
                         <CommentIcon />
                         <span>10 comentarios</span>
                      </div>
-                  </div>
+                  </div> */}
                   {temasFiltered.map((t, index) => (
                      <Link to={"/foro/" + categoria + "/" + t.codigo} className="card" key={index}>
                         <div className="card--info">

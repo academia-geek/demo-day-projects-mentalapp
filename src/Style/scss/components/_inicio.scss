@@ -16,23 +16,36 @@
    }
 
    .experiences {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
+     
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
 
       .exp {
-         border: 1px solid lightgray;
+         
+         width: 100%;
+         max-width: 300px;
          padding: 1rem;
+         margin: 20px;
          display: flex;
          flex-direction: column;
          align-items: center;
-         gap: 1rem;
          text-align: center;
-
+         gap: 1rem;
+         color: $grey;
+         border-width: 3px;
+         border-style: solid;
+         border-image: $degradado 1;
+         
          img {
-            width: 4rem;
+            width: 3rem;
+            padding: 10px;
             border-radius: 100%;
-            margin-top: -15%;
+            position: relative;
+            top: -2rem;
+            background-image: $degradado;
          }
       }
    }
@@ -140,20 +153,7 @@
          align-items: center;
          justify-content: flex-start;
          > button {
-            width: 90%;
-            max-width: 230px;
-            padding: 15px;
-            font-size: 15px;
-            font-family: $nunito;
-            margin-right: 20px;
-            background-color: $primary;
-            color: $white;
-            border: none;
-            border-radius: 10px;
-            &:hover {
-               background-image: $degradado;
-               cursor: pointer;
-            }
+            @extend %boton-general;
          }
          @media screen and (max-width: 1240px) {
             flex-direction: column;

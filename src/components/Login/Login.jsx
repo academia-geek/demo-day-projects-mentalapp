@@ -67,7 +67,7 @@ const Login = () => {
 
    return (
       <div className="login-container">
-         <div className="login" style={{ borderRight: "1px solid lightgray" }}>
+         <div className="login">
             <h3 className="title">Inicia sesión en tu cuenta</h3>
             <form onSubmit={loginFormik.handleSubmit}>
                <TextField
@@ -93,7 +93,7 @@ const Login = () => {
                   <img src={logoGoogle} alt="" />
                   <span>Ingresa con Google</span>
                </button>
-               <button onClick={handleFacebook}>
+               <button onClick={handleFacebook} style={{ width: "100%" }}>
                   <img src={logoFacebook} alt="" />
                   <span>Ingresa con Facebook</span>
                </button>
