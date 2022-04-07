@@ -32,7 +32,8 @@ const Chat = () => {
   const handleMessage = (e) => {
     e.preventDefault();
     dispatch(addNewMessage({ texto, uid, fecha }));
-    reset();
+    formValues.texto = ""
+    // e.target[0].value = ""
   };
 
   let uid = usuario.id;

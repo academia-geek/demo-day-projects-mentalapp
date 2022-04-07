@@ -70,9 +70,9 @@ const Perfil = () => {
           </div>
           <div className="main-data">
             <h2>Actividad</h2>
-            {publicacion.map((p) => (
+            {publicacion.map((p, index) => (
               <>
-                <div className="sec-act">
+                <div className="sec-act" key={index}>
                   <img
                     src="https://www.tekcrispy.com/wp-content/uploads/2018/10/avatar.png"
                     alt="profile-image"
